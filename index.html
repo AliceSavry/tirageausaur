@@ -1,161 +1,371 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Le Tirageausaur 🦖</title>
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon"
+          type="image/x-icon"
+          href="favicon.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- POLICES ENFANTINES -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Chewy&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+
     <style>
+
         * {
             box-sizing: border-box;
         }
+
 
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
+
             margin: 0;
+
             min-height: 100vh;
-            font-family: "Inter", sans-serif;
+
+            font-family:
+                "Baloo 2",
+                sans-serif;
 
             background:
-                radial-gradient(circle at top left, #d9f99d 0, transparent 30%),
-                radial-gradient(circle at bottom right, #bbf7d0 0, transparent 30%),
+                radial-gradient(
+                    circle at top left,
+                    #d9f99d 0,
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at bottom right,
+                    #bbf7d0 0,
+                    transparent 30%
+                ),
+
                 #f4f7f2;
 
             color: #1f2937;
+
             overflow-x: hidden;
         }
 
+
         /* =========================
-           DINO ERRATIQUE 🦖
+           PETITES EMPREINTES DE FOND
+        ========================= */
+
+        body::before {
+
+            content:
+                "🐾     🌿       🦴       🐾        🌿      🦴       🐾";
+
+            position: fixed;
+
+            left: 0;
+            top: 20%;
+
+            width: 100%;
+
+            font-size: 28px;
+
+            opacity: .07;
+
+            letter-spacing: 35px;
+
+            transform: rotate(-12deg);
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =========================
+           DINO ERRATIQUE
         ========================= */
 
         #movingIcon {
+
             position: fixed;
+
             width: 90px;
+
             left: 0;
             top: 0;
 
             z-index: 1000;
 
             pointer-events: none;
+
             user-select: none;
 
             will-change: transform;
 
             filter:
-                drop-shadow(0 5px 5px rgba(0, 0, 0, .18));
+                drop-shadow(
+                    0 5px 5px
+                    rgba(0,0,0,.18)
+                );
         }
+
 
         /* =========================
            PAGE
         ========================= */
 
         .page {
-            width: min(1000px, 94%);
+
+            width:
+                min(1000px, 94%);
+
             margin: auto;
-            padding: 90px 0 60px;
+
+            padding:
+                80px 0 60px;
         }
 
+
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
+
             text-align: center;
+
             margin-bottom: 35px;
         }
 
+
         h1 {
-            font-family: "Knewave", cursive;
-            font-size: clamp(42px, 8vw, 78px);
+
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size:
+                clamp(
+                    48px,
+                    8vw,
+                    82px
+                );
+
             margin: 0;
 
-            color: #166534;
+            color: #15803d;
+
+            letter-spacing: 2px;
 
             text-shadow:
-                3px 3px 0 #bef264,
-                6px 6px 0 rgba(0, 0, 0, .08);
+
+                3px 3px 0
+                #bef264,
+
+                6px 6px 0
+                #84cc16,
+
+                9px 9px 0
+                rgba(0,0,0,.08);
+
+            transform:
+                rotate(-1deg);
         }
 
+
         .subtitle {
-            margin-top: 10px;
-            font-size: 17px;
+
+            margin-top: 12px;
+
+            font-size: 19px;
+
+            font-weight: 600;
+
             color: #64748b;
         }
+
+
+        /* =========================
+           FRISE DINO
+        ========================= */
+
+        .dino-trail {
+
+            margin-top: 12px;
+
+            font-size: 23px;
+
+            letter-spacing: 6px;
+
+            animation:
+                trailBounce
+                2s
+                ease-in-out
+                infinite;
+        }
+
+
+        @keyframes trailBounce {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-4px);
+
+            }
+
+        }
+
 
         /* =========================
            CARTE PRINCIPALE
         ========================= */
 
         .main-card {
-            background: rgba(255, 255, 255, .92);
 
-            border-radius: 28px;
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    .93
+                );
+
+            border-radius: 30px;
 
             padding: 30px;
 
             box-shadow:
-                0 20px 50px rgba(0, 0, 0, .08);
+
+                0 20px 50px
+                rgba(0,0,0,.08);
 
             border:
-                1px solid rgba(255, 255, 255, .8);
 
-            backdrop-filter: blur(8px);
+                3px solid
+                rgba(
+                    132,
+                    204,
+                    22,
+                    .25
+                );
+
+            backdrop-filter:
+                blur(8px);
         }
 
+
         /* =========================
-           ENTETE PARTICIPANTS
+           PARTICIPANTS
         ========================= */
 
         .participants-header {
+
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
             gap: 10px;
+
             margin-bottom: 12px;
         }
 
-        .participants-header strong {
-            font-size: 16px;
-        }
 
-        #participantCount {
-            background: #dcfce7;
+        .participants-header strong {
+
+            font-family:
+                "Chewy",
+                cursive;
+
             color: #166534;
 
-            padding: 7px 12px;
+            font-size: 23px;
+
+            letter-spacing: .5px;
+        }
+
+
+        #participantCount {
+
+            background: #dcfce7;
+
+            color: #166534;
+
+            padding:
+                7px 14px;
+
             border-radius: 30px;
 
             font-weight: 700;
-            font-size: 14px;
+
+            font-size: 15px;
         }
+
 
         /* =========================
            TEXTAREA
         ========================= */
 
         textarea {
+
             width: 100%;
+
             min-height: 220px;
 
             resize: vertical;
 
-            border: 2px solid #e2e8f0;
-            border-radius: 18px;
+            border:
+
+                2px solid
+                #d1d5db;
+
+            border-radius: 20px;
 
             padding: 18px;
 
-            font-family: inherit;
-            font-size: 16px;
+            font-family:
+                "Baloo 2",
+                sans-serif;
+
+            font-size: 17px;
 
             outline: none;
 
@@ -164,21 +374,34 @@
             background: #fafafa;
         }
 
+
         textarea:focus {
-            border-color: #22c55e;
+
+            border-color:
+                #22c55e;
 
             background: white;
 
             box-shadow:
-                0 0 0 4px rgba(34, 197, 94, .12);
+
+                0 0 0 5px
+                rgba(
+                    34,
+                    197,
+                    94,
+                    .12
+                );
         }
+
 
         /* =========================
            OPTIONS
         ========================= */
 
         .options {
+
             display: flex;
+
             flex-wrap: wrap;
 
             gap: 15px;
@@ -186,29 +409,41 @@
             margin-top: 20px;
 
             align-items: center;
-            justify-content: space-between;
+
+            justify-content:
+                space-between;
         }
 
+
         .toggle-option {
+
             display: flex;
+
             align-items: center;
+
             gap: 12px;
 
             cursor: pointer;
 
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 16px;
+
+            font-weight: 700;
 
             user-select: none;
         }
 
+
         .toggle-option input {
+
             display: none;
         }
 
+
         .toggle {
-            width: 48px;
-            height: 27px;
+
+            width: 50px;
+
+            height: 28px;
 
             border-radius: 30px;
 
@@ -219,57 +454,81 @@
             transition: .25s;
         }
 
+
         .toggle::after {
-            content: "";
+
+            content: "🥚";
 
             position: absolute;
 
-            width: 21px;
-            height: 21px;
+            display: flex;
 
-            background: white;
+            align-items: center;
 
-            border-radius: 50%;
+            justify-content: center;
 
-            top: 3px;
-            left: 3px;
+            width: 24px;
 
-            box-shadow:
-                0 2px 5px rgba(0, 0, 0, .2);
+            height: 24px;
+
+            font-size: 16px;
+
+            top: 2px;
+
+            left: 2px;
 
             transition: .25s;
         }
 
-        .toggle-option input:checked + .toggle {
-            background: #22c55e;
+
+        .toggle-option
+        input:checked
+        +
+        .toggle {
+
+            background: #84cc16;
         }
 
-        .toggle-option input:checked + .toggle::after {
+
+        .toggle-option
+        input:checked
+        +
+        .toggle::after {
+
             left: 24px;
         }
 
+
         /* =========================
-           BOUTON DE TIRAGE
+           BOUTON TIRAGE
         ========================= */
 
         #drawButton {
+
             width: 100%;
 
             margin-top: 28px;
 
             border: none;
-            border-radius: 18px;
 
-            padding: 18px;
+            border-radius: 20px;
 
-            font-size: 18px;
-            font-weight: 800;
+            padding: 19px;
+
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size: 24px;
+
+            letter-spacing: 1px;
 
             cursor: pointer;
 
             color: white;
 
             background:
+
                 linear-gradient(
                     135deg,
                     #16a34a,
@@ -277,7 +536,17 @@
                 );
 
             box-shadow:
-                0 10px 25px rgba(22, 163, 74, .28);
+
+                0 10px 0
+                #3f6212,
+
+                0 15px 25px
+                rgba(
+                    22,
+                    163,
+                    74,
+                    .25
+                );
 
             transition:
                 transform .15s,
@@ -285,42 +554,79 @@
                 opacity .15s;
         }
 
+
         #drawButton:hover {
-            transform: translateY(-2px);
+
+            transform:
+                translateY(-2px);
 
             box-shadow:
-                0 14px 30px rgba(22, 163, 74, .35);
+
+                0 12px 0
+                #3f6212,
+
+                0 18px 30px
+                rgba(
+                    22,
+                    163,
+                    74,
+                    .3
+                );
         }
+
 
         #drawButton:active {
-            transform: scale(.98);
+
+            transform:
+                translateY(6px);
+
+            box-shadow:
+
+                0 4px 0
+                #3f6212,
+
+                0 8px 15px
+                rgba(
+                    22,
+                    163,
+                    74,
+                    .2
+                );
         }
 
+
         #drawButton:disabled {
+
             opacity: .65;
+
             cursor: wait;
         }
+
 
         /* =========================
            RESULTAT
         ========================= */
 
         #winner {
-            margin-top: 30px;
 
-            min-height: 150px;
+            margin-top: 35px;
+
+            min-height: 170px;
 
             display: flex;
+
             flex-direction: column;
 
             align-items: center;
+
             justify-content: center;
 
             text-align: center;
 
-            border-radius: 22px;
+            border-radius: 25px;
 
             background:
+
                 linear-gradient(
                     135deg,
                     #ecfccb,
@@ -328,120 +634,196 @@
                 );
 
             border:
-                2px dashed #84cc16;
+
+                3px dashed
+                #84cc16;
 
             padding: 25px;
 
             transition: .3s;
         }
 
+
         #winner .small {
-            font-size: 14px;
+
+            font-size: 15px;
 
             color: #64748b;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
+
             letter-spacing: 1px;
 
-            font-weight: 700;
+            font-weight: 800;
         }
 
-        #winner .name {
-            font-family: "Knewave", cursive;
 
-            font-size: clamp(35px, 6vw, 60px);
+        #winner .name {
+
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size:
+
+                clamp(
+                    42px,
+                    7vw,
+                    70px
+                );
 
             color: #166534;
 
             margin-top: 8px;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+
+                2px 2px 0
+                #bef264;
         }
+
 
         #winner.draw-animation {
-            transform: scale(1.03);
+
+            transform:
+                scale(1.04)
+                rotate(-1deg);
 
             box-shadow:
-                0 15px 40px rgba(34, 197, 94, .18);
+
+                0 15px 40px
+                rgba(
+                    34,
+                    197,
+                    94,
+                    .18
+                );
         }
+
 
         /* =========================
            DASHBOARD
         ========================= */
 
         .dashboard {
+
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-columns:
+                repeat(2,1fr);
 
             gap: 22px;
 
             margin-top: 25px;
         }
 
+
         .panel {
+
             background: white;
 
-            border-radius: 22px;
+            border-radius: 24px;
 
             padding: 22px;
 
+            border:
+
+                2px solid
+                #dcfce7;
+
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, .06);
+
+                0 8px 25px
+                rgba(0,0,0,.06);
         }
 
-        .panel h2 {
-            font-size: 19px;
 
-            margin: 0 0 18px;
+        .panel h2 {
+
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size: 25px;
+
+            letter-spacing: .5px;
+
+            margin:
+                0 0 18px;
 
             color: #166534;
         }
 
+
         ul {
+
             padding: 0;
+
             margin: 0;
 
             list-style: none;
         }
 
+
         li {
+
             display: flex;
 
             align-items: center;
-            justify-content: space-between;
+
+            justify-content:
+                space-between;
 
             gap: 10px;
 
-            padding: 11px 5px;
+            padding:
+                11px 5px;
 
             border-bottom:
-                1px solid #f1f5f9;
 
-            font-size: 14px;
+                1px solid
+                #f1f5f9;
+
+            font-size: 15px;
         }
 
+
         li:last-child {
+
             border-bottom: none;
         }
 
+
         .score {
+
             font-weight: 800;
 
             background: #ecfccb;
+
             color: #365314;
 
-            padding: 4px 9px;
+            padding:
+                4px 10px;
 
             border-radius: 15px;
         }
+
 
         /* =========================
            RESET
         ========================= */
 
         .reset-wrapper {
+
             text-align: center;
         }
 
+
         #resetButton {
+
             margin-top: 20px;
 
             border: none;
@@ -450,23 +832,33 @@
 
             color: #64748b;
 
-            font-size: 13px;
+            font-family:
+                "Baloo 2",
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 600;
 
             cursor: pointer;
 
-            text-decoration: underline;
+            text-decoration:
+                underline;
         }
 
+
         /* =========================
-           CANVAS
+           CONFETTIS
         ========================= */
 
         #fireworksCanvas {
+
             position: fixed;
 
             inset: 0;
 
             width: 100%;
+
             height: 100%;
 
             pointer-events: none;
@@ -474,1207 +866,1856 @@
             z-index: 999;
         }
 
+
         /* =========================
            MOBILE
         ========================= */
 
-        @media (max-width: 700px) {
+        @media
+        (max-width:700px) {
 
             .page {
+
                 width: 92%;
-                padding-top: 85px;
+
+                padding-top: 80px;
             }
 
+
             .main-card {
+
                 padding: 20px;
             }
 
+
             .dashboard {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
 
+
             #movingIcon {
+
                 width: 65px;
             }
 
+
             .participants-header {
-                align-items: flex-start;
-                flex-direction: column;
+
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
             }
+
+
+            .dino-trail {
+
+                font-size: 17px;
+
+                letter-spacing: 2px;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <img
-        src="dino.png"
-        alt="Le Tirageausaur"
-        id="movingIcon"
-    >
 
-    <canvas id="fireworksCanvas"></canvas>
+<!-- PETIT DINO QUI SE BALADE -->
 
-    <div class="page">
+<img
+    src="dino.png"
+    alt="Le Tirageausaur"
+    id="movingIcon"
+>
 
-        <header>
-            <h1>Le Tirageausaur</h1>
 
-            <div class="subtitle">
-                🦖 Le dinosaure qui décide à ta place.
-            </div>
-        </header>
+<canvas id="fireworksCanvas"></canvas>
 
-        <div class="main-card">
 
-            <div class="participants-header">
+<div class="page">
 
-                <strong>
-                    👥 Participants
-                </strong>
 
-                <span id="participantCount">
-                    0 participant
-                </span>
+    <!-- HEADER -->
 
-            </div>
+    <header>
 
-            <textarea
-                id="participantInput"
-                placeholder="Collez ou écrivez les noms des participants...
+        <h1>
+            🦖 Le Tirageausaur 🦕
+        </h1>
 
-Exemple :
+        <div class="subtitle">
+
+            🌿 Le dinosaure qui décide
+            à ta place… 🌿
+
+        </div>
+
+        <div class="dino-trail">
+
+            🦴 🌿 🐾 🌴 🥚 🌴 🐾 🌿 🦴
+
+        </div>
+
+    </header>
+
+
+
+    <!-- CARTE PRINCIPALE -->
+
+    <div class="main-card">
+
+
+        <div class="participants-header">
+
+            <strong>
+
+                👥 Les victimes potentielles
+
+            </strong>
+
+            <span id="participantCount">
+
+                0 participant
+
+            </span>
+
+        </div>
+
+
+
+        <textarea
+            id="participantInput"
+            placeholder="Écris les noms des participants, un par ligne...
+
+Par exemple :
 Alice
 Mikael
 Seb
 Lilou"
-            ></textarea>
+        ></textarea>
 
-            <div class="options">
 
-                <label class="toggle-option">
 
-                    <input
-                        type="checkbox"
-                        id="removeWinner"
-                    >
+        <!-- OPTION RETRAIT -->
 
-                    <span class="toggle"></span>
+        <div class="options">
 
-                    Retirer le nom après le tirage
+            <label class="toggle-option">
 
-                </label>
+                <input
+                    type="checkbox"
+                    id="removeWinner"
+                >
 
-            </div>
+                <span class="toggle"></span>
 
-            <button id="drawButton">
+                Retirer la victime
+                après le tirage
 
-                <i class="fa-solid fa-dice"></i>
+            </label>
 
-                Faire le Tirageausaur
+        </div>
+
+
+
+        <!-- BOUTON -->
+
+        <button id="drawButton">
+
+            🦖
+
+            Faire le Tirageausaur !
+
+        </button>
+
+
+
+        <!-- RESULTAT -->
+
+        <div id="winner">
+
+            <span class="small">
+
+                Le Tirageausaur
+                cherche sa prochaine victime…
+
+            </span>
+
+            <span class="name">
+
+                🥚
+
+            </span>
+
+        </div>
+
+
+
+        <div class="reset-wrapper">
+
+            <button id="resetButton">
+
+                🦴 Réinitialiser
+                l'historique et les scores
 
             </button>
 
-            <div id="winner">
-
-                <span class="small">
-                    Le Tirageausaur attend ses victimes…
-                </span>
-
-                <span class="name">
-                    🦖
-                </span>
-
-            </div>
-
-            <div class="reset-wrapper">
-
-                <button id="resetButton">
-                    Réinitialiser l'historique et les scores
-                </button>
-
-            </div>
-
         </div>
 
-        <div class="dashboard">
-
-            <div class="panel">
-
-                <h2>
-                    🕒 Historique des tirages
-                </h2>
-
-                <ul id="historyList">
-
-                    <li>
-                        Aucun tirage pour le moment.
-                    </li>
-
-                </ul>
-
-            </div>
-
-            <div class="panel">
-
-                <h2>
-                    🏆 Scoreboard
-                </h2>
-
-                <ul id="scoreList">
-
-                    <li>
-                        Aucun score.
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
 
     </div>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
-    </script>
 
-    <script>
 
-        /* ==========================================
-           ELEMENTS
-        ========================================== */
+    <!-- TABLEAUX -->
 
-        const participantInput =
-            document.getElementById("participantInput");
+    <div class="dashboard">
 
-        const drawButton =
-            document.getElementById("drawButton");
 
-        const winnerBox =
-            document.getElementById("winner");
+        <div class="panel">
 
-        const participantCount =
-            document.getElementById("participantCount");
+            <h2>
 
-        const removeWinner =
-            document.getElementById("removeWinner");
+                🐾 Historique des victimes
 
-        const historyList =
-            document.getElementById("historyList");
+            </h2>
 
-        const scoreList =
-            document.getElementById("scoreList");
+            <ul id="historyList">
 
-        const resetButton =
-            document.getElementById("resetButton");
+                <li>
 
-        const dino =
-            document.getElementById("movingIcon");
+                    Aucune victime
+                    pour le moment…
 
+                </li>
 
-        /* ==========================================
-           DONNEES
-        ========================================== */
+            </ul>
 
-        let history = [];
+        </div>
 
-        let scores = {};
 
 
-        /* ==========================================
-           PARTICIPANTS
-        ========================================== */
+        <div class="panel">
 
-        function getParticipants() {
+            <h2>
 
-            return participantInput.value
-                .split("\n")
-                .map(name => name.trim())
-                .filter(name => name !== "");
+                🏆 Tableau des survivants
 
-        }
+            </h2>
 
+            <ul id="scoreList">
 
-        function updateParticipantCount() {
+                <li>
 
-            const participants =
-                getParticipants();
+                    Le Tirageausaur
+                    n'a encore mangé personne.
 
-            const number =
-                participants.length;
+                </li>
 
-            participantCount.textContent =
-                number +
-                (number > 1
-                    ? " participants"
-                    : " participant");
+            </ul>
 
-        }
+        </div>
 
 
-        /* ==========================================
-           TIRAGE
-        ========================================== */
+    </div>
 
-        function drawParticipant() {
 
-            let participants =
-                getParticipants();
+</div>
 
-            if (participants.length === 0) {
 
-                winnerBox.innerHTML = `
 
-                    <span class="small">
-                        Oups…
-                    </span>
+<!-- CONFETTIS -->
 
-                    <span class="name">
-                        Aucun nom 🦖
-                    </span>
+<script
+src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
+</script>
 
-                `;
 
-                return;
-            }
 
-            drawButton.disabled = true;
+<script>
 
-            let animationCount = 0;
 
-            const animation =
-                setInterval(() => {
+/* ==========================================
+   ELEMENTS
+========================================== */
 
-                    const temporaryName =
-                        participants[
-                            Math.floor(
-                                Math.random()
-                                *
-                                participants.length
-                            )
-                        ];
+const participantInput =
+    document.getElementById(
+        "participantInput"
+    );
 
-                    winnerBox.innerHTML = `
+const drawButton =
+    document.getElementById(
+        "drawButton"
+    );
 
-                        <span class="small">
-                            Le Tirageausaur réfléchit…
-                        </span>
+const winnerBox =
+    document.getElementById(
+        "winner"
+    );
 
-                        <span class="name">
-                            ${escapeHTML(temporaryName)}
-                        </span>
+const participantCount =
+    document.getElementById(
+        "participantCount"
+    );
 
-                    `;
+const removeWinner =
+    document.getElementById(
+        "removeWinner"
+    );
 
-                    animationCount++;
+const historyList =
+    document.getElementById(
+        "historyList"
+    );
 
-                    if (animationCount >= 14) {
+const scoreList =
+    document.getElementById(
+        "scoreList"
+    );
 
-                        clearInterval(animation);
+const resetButton =
+    document.getElementById(
+        "resetButton"
+    );
 
-                        chooseFinalParticipant(
-                            participants
-                        );
+const dino =
+    document.getElementById(
+        "movingIcon"
+    );
 
-                    }
 
-                }, 85);
 
-        }
+/* ==========================================
+   DONNEES
+========================================== */
 
+let history = [];
 
-        function chooseFinalParticipant(
-            participants
-        ) {
+let scores = {};
 
-            const winnerIndex =
-                Math.floor(
-                    Math.random()
-                    *
-                    participants.length
-                );
 
-            const winner =
-                participants[winnerIndex];
 
-            winnerBox.innerHTML = `
+/* ==========================================
+   PARTICIPANTS
+========================================== */
 
-                <span class="small">
-                    🦖 Le Tirageausaur a choisi
-                </span>
+function getParticipants() {
 
-                <span class="name">
-                    ${escapeHTML(winner)}
-                </span>
+    return participantInput
+        .value
+        .split("\n")
+        .map(
+            name =>
+                name.trim()
+        )
+        .filter(
+            name =>
+                name !== ""
+        );
 
-                <div style="
-                    margin-top:8px;
-                    font-size:14px;
-                    color:#64748b;
-                ">
-                    Tu as été dévoré par le Tirageausaur !
-                </div>
+}
 
-            `;
 
-            winnerBox.classList.add(
-                "draw-animation"
-            );
 
-            setTimeout(
-                () => {
-                    winnerBox.classList.remove(
-                        "draw-animation"
-                    );
-                },
-                500
-            );
+function updateParticipantCount() {
 
+    const participants =
+        getParticipants();
 
-            /* Historique */
+    const number =
+        participants.length;
 
-            history.unshift({
 
-                name: winner,
+    participantCount.textContent =
 
-                date:
-                    new Date()
-                        .toLocaleTimeString(
-                            "fr-FR",
-                            {
-                                hour: "2-digit",
-                                minute: "2-digit"
-                            }
-                        )
+        number +
 
-            });
+        (
+            number > 1
+            ?
+            " victimes potentielles"
+            :
+            " victime potentielle"
+        );
 
+}
 
-            /* Score */
 
-            if (!scores[winner]) {
 
-                scores[winner] = 0;
+/* ==========================================
+   TIRAGE
+========================================== */
 
-            }
+function drawParticipant() {
 
-            scores[winner]++;
+    let participants =
+        getParticipants();
 
 
-            /* Retirer le nom */
+    if (
+        participants.length === 0
+    ) {
 
-            if (removeWinner.checked) {
+        winnerBox.innerHTML = `
 
-                participants.splice(
-                    winnerIndex,
-                    1
-                );
+            <span class="small">
 
-                participantInput.value =
-                    participants.join("\n");
+                Le Tirageausaur
+                a faim…
 
-            }
+            </span>
 
+            <span class="name">
 
-            updateParticipantCount();
+                Aucun nom ! 🦖
 
-            updateHistory();
+            </span>
 
-            updateScoreboard();
+        `;
 
-            launchConfetti();
+        return;
 
-            drawButton.disabled = false;
+    }
 
-        }
 
+    drawButton.disabled =
+        true;
 
-        /* ==========================================
-           HISTORIQUE
-        ========================================== */
 
-        function updateHistory() {
+    let animationCount =
+        0;
 
-            historyList.innerHTML = "";
 
-            if (history.length === 0) {
-
-                historyList.innerHTML = `
-
-                    <li>
-                        Aucun tirage pour le moment.
-                    </li>
-
-                `;
-
-                return;
-            }
-
-            history.forEach(item => {
-
-                const li =
-                    document.createElement("li");
-
-                li.innerHTML = `
-
-                    <span>
-                        🦖 ${escapeHTML(item.name)}
-                    </span>
-
-                    <small>
-                        ${item.date}
-                    </small>
-
-                `;
-
-                historyList.appendChild(li);
-
-            });
-
-        }
-
-
-        /* ==========================================
-           SCOREBOARD
-        ========================================== */
-
-        function updateScoreboard() {
-
-            scoreList.innerHTML = "";
-
-            const ranking =
-                Object.entries(scores)
-                    .sort(
-                        (a, b) =>
-                            b[1] - a[1]
-                    );
-
-            if (ranking.length === 0) {
-
-                scoreList.innerHTML = `
-
-                    <li>
-                        Aucun score.
-                    </li>
-
-                `;
-
-                return;
-            }
-
-            ranking.forEach(
-                ([name, score], index) => {
-
-                    const li =
-                        document.createElement("li");
-
-                    let medal = "";
-
-                    if (index === 0)
-                        medal = "🥇";
-
-                    else if (index === 1)
-                        medal = "🥈";
-
-                    else if (index === 2)
-                        medal = "🥉";
-
-                    else
-                        medal = "🦖";
-
-                    li.innerHTML = `
-
-                        <span>
-                            ${medal}
-                            ${escapeHTML(name)}
-                        </span>
-
-                        <span class="score">
-                            ${score}
-                        </span>
-
-                    `;
-
-                    scoreList.appendChild(li);
-
-                }
-            );
-
-        }
-
-
-        /* ==========================================
-           CONFETTIS
-        ========================================== */
-
-        function launchConfetti() {
-
-            if (
-                typeof confetti !== "function"
-            ) {
-                return;
-            }
-
-            confetti({
-
-                particleCount: 120,
-
-                spread: 75,
-
-                origin: {
-                    y: .65
-                }
-
-            });
-
-            setTimeout(() => {
-
-                confetti({
-
-                    particleCount: 80,
-
-                    angle: 60,
-
-                    spread: 55,
-
-                    origin: {
-                        x: 0
-                    }
-
-                });
-
-                confetti({
-
-                    particleCount: 80,
-
-                    angle: 120,
-
-                    spread: 55,
-
-                    origin: {
-                        x: 1
-                    }
-
-                });
-
-            }, 200);
-
-        }
-
-
-        /* ==========================================
-           RESET
-        ========================================== */
-
-        resetButton.addEventListener(
-            "click",
+    const animation =
+        setInterval(
             () => {
 
-                history = [];
 
-                scores = {};
+                const temporaryName =
 
-                updateHistory();
+                    participants[
+                        Math.floor(
+                            Math.random()
+                            *
+                            participants.length
+                        )
+                    ];
 
-                updateScoreboard();
 
                 winnerBox.innerHTML = `
 
                     <span class="small">
-                        Le Tirageausaur attend ses victimes…
+
+                        🦖 Le Tirageausaur
+                        renifle ses victimes…
+
                     </span>
 
                     <span class="name">
-                        🦖
+
+                        ${escapeHTML(
+                            temporaryName
+                        )}
+
                     </span>
 
                 `;
 
-            }
-        );
 
-
-        /* ==========================================
-           SECURITE HTML
-        ========================================== */
-
-        function escapeHTML(text) {
-
-            const div =
-                document.createElement("div");
-
-            div.textContent =
-                text;
-
-            return div.innerHTML;
-
-        }
-
-
-        /* ==========================================
-           EVENEMENTS
-        ========================================== */
-
-        participantInput.addEventListener(
-            "input",
-            updateParticipantCount
-        );
-
-        drawButton.addEventListener(
-            "click",
-            drawParticipant
-        );
-
-        updateParticipantCount();
-
-
-        /* ==========================================
-           DINO ERRATIQUE QUI FUIT LA SOURIS 🦖
-        ========================================== */
-
-        let dinoX =
-            Math.random()
-            *
-            Math.max(
-                1,
-                window.innerWidth - 100
-            );
-
-        let dinoY =
-            Math.random()
-            *
-            Math.max(
-                1,
-                window.innerHeight - 100
-            );
-
-
-        let velocityX =
-            randomSpeed();
-
-        let velocityY =
-            randomSpeed();
-
-
-        let mouseX = -1000;
-
-        let mouseY = -1000;
-
-
-        const normalSpeed =
-            2.4;
-
-        const dangerDistance =
-            190;
-
-        const panicDistance =
-            95;
-
-        const maxEscapeSpeed =
-            11;
-
-
-        function randomSpeed() {
-
-            let speed =
-                Math.random() * 2 + 1;
-
-            if (
-                Math.random() > 0.5
-            ) {
-                speed *= -1;
-            }
-
-            return speed;
-
-        }
-
-
-        /* ==========================================
-           POSITION DE LA SOURIS
-        ========================================== */
-
-        document.addEventListener(
-            "mousemove",
-            event => {
-
-                mouseX =
-                    event.clientX;
-
-                mouseY =
-                    event.clientY;
-
-            }
-        );
-
-
-        /* ==========================================
-           COMPORTEMENT ERRATIQUE
-        ========================================== */
-
-        setInterval(() => {
-
-            /*
-               Il change souvent légèrement
-               de direction
-            */
-
-            if (
-                Math.random() < 0.75
-            ) {
-
-                velocityX +=
-                    (Math.random() - 0.5)
-                    * 4;
-
-                velocityY +=
-                    (Math.random() - 0.5)
-                    * 4;
-
-            }
-
-
-            /*
-               Parfois demi-tour brutal
-            */
-
-            if (
-                Math.random() < 0.18
-            ) {
-
-                velocityX *= -1;
-
-            }
-
-            if (
-                Math.random() < 0.18
-            ) {
-
-                velocityY *= -1;
-
-            }
-
-        }, 420);
-
-
-        /* ==========================================
-           PETITE TELEPORTATION DE PANIQUE
-        ========================================== */
-
-        let lastTeleport = 0;
-
-        function maybeTeleport(
-            distance
-        ) {
-
-            const now =
-                Date.now();
-
-            /*
-               Si la souris est vraiment trop proche,
-               il a une petite chance de tricher.
-            */
-
-            if (
-                distance < 50
-                &&
-                now - lastTeleport > 2500
-                &&
-                Math.random() < 0.035
-            ) {
-
-                dinoX =
-                    Math.random()
-                    *
-                    Math.max(
-                        1,
-                        window.innerWidth
-                        -
-                        dino.offsetWidth
-                    );
-
-                dinoY =
-                    Math.random()
-                    *
-                    Math.max(
-                        1,
-                        window.innerHeight
-                        -
-                        dino.offsetHeight
-                    );
-
-                velocityX =
-                    randomSpeed() * 2;
-
-                velocityY =
-                    randomSpeed() * 2;
-
-                lastTeleport =
-                    now;
-
-            }
-
-        }
-
-
-        /* ==========================================
-           ANIMATION DU DINO
-        ========================================== */
-
-        function moveDino() {
-
-            const dinoWidth =
-                dino.offsetWidth || 90;
-
-            const dinoHeight =
-                dino.offsetHeight || 90;
-
-
-            const centerX =
-                dinoX
-                +
-                dinoWidth / 2;
-
-            const centerY =
-                dinoY
-                +
-                dinoHeight / 2;
-
-
-            const deltaX =
-                centerX
-                -
-                mouseX;
-
-            const deltaY =
-                centerY
-                -
-                mouseY;
-
-
-            const distance =
-                Math.sqrt(
-                    deltaX * deltaX
-                    +
-                    deltaY * deltaY
-                );
-
-
-            /* ===============================
-               FUITE DE LA SOURIS
-            =============================== */
-
-            if (
-                distance < dangerDistance
-                &&
-                distance > 0
-            ) {
-
-                const directionX =
-                    deltaX
-                    /
-                    distance;
-
-                const directionY =
-                    deltaY
-                    /
-                    distance;
-
-
-                const panic =
-                    1
-                    -
-                    distance
-                    /
-                    dangerDistance;
-
-
-                velocityX +=
-                    directionX
-                    *
-                    panic
-                    *
-                    2.8;
-
-                velocityY +=
-                    directionY
-                    *
-                    panic
-                    *
-                    2.8;
+                animationCount++;
 
 
                 if (
-                    distance < panicDistance
+                    animationCount >= 14
                 ) {
 
-                    velocityX +=
-                        directionX
-                        *
-                        2.4;
+                    clearInterval(
+                        animation
+                    );
 
-                    velocityY +=
-                        directionY
-                        *
-                        2.4;
+
+                    chooseFinalParticipant(
+                        participants
+                    );
 
                 }
 
+            },
+
+            85
+        );
+
+}
+
+
+
+/* ==========================================
+   RESULTAT
+========================================== */
+
+function chooseFinalParticipant(
+    participants
+) {
+
+
+    const winnerIndex =
+
+        Math.floor(
+            Math.random()
+            *
+            participants.length
+        );
+
+
+    const winner =
+        participants[
+            winnerIndex
+        ];
+
+
+    winnerBox.innerHTML = `
+
+        <span class="small">
+
+            🦖 LE TIRAGEAUSAUR A CHOISI…
+
+        </span>
+
+        <span class="name">
+
+            ${escapeHTML(
+                winner
+            )}
+
+        </span>
+
+        <div style="
+            margin-top:8px;
+            font-size:17px;
+            font-weight:700;
+            color:#64748b;
+        ">
+
+            Tu as été dévoré
+            par le Tirageausaur !
+
+            🍖
+
+        </div>
+
+    `;
+
+
+    winnerBox.classList.add(
+        "draw-animation"
+    );
+
+
+    setTimeout(
+        () => {
+
+            winnerBox
+                .classList
+                .remove(
+                    "draw-animation"
+                );
+
+        },
+
+        500
+    );
+
+
+
+    /* HISTORIQUE */
+
+    history.unshift({
+
+        name:
+            winner,
+
+        date:
+            new Date()
+                .toLocaleTimeString(
+                    "fr-FR",
+                    {
+
+                        hour:
+                            "2-digit",
+
+                        minute:
+                            "2-digit"
+
+                    }
+                )
+
+    });
+
+
+
+    /* SCORE */
+
+    if (
+        !scores[winner]
+    ) {
+
+        scores[winner] =
+            0;
+
+    }
+
+
+    scores[winner]++;
+
+
+
+    /* RETIRER LE NOM */
+
+    if (
+        removeWinner.checked
+    ) {
+
+
+        participants.splice(
+            winnerIndex,
+            1
+        );
+
+
+        participantInput.value =
+
+            participants.join(
+                "\n"
+            );
+
+    }
+
+
+
+    updateParticipantCount();
+
+    updateHistory();
+
+    updateScoreboard();
+
+    launchConfetti();
+
+
+    drawButton.disabled =
+        false;
+
+}
+
+
+
+/* ==========================================
+   HISTORIQUE
+========================================== */
+
+function updateHistory() {
+
+
+    historyList.innerHTML =
+        "";
+
+
+    if (
+        history.length === 0
+    ) {
+
+
+        historyList.innerHTML = `
+
+            <li>
+
+                Aucune victime
+                pour le moment…
+
+            </li>
+
+        `;
+
+
+        return;
+
+    }
+
+
+
+    history.forEach(
+        item => {
+
+
+            const li =
+                document.createElement(
+                    "li"
+                );
+
+
+            li.innerHTML = `
+
+                <span>
+
+                    🦖
+                    ${escapeHTML(
+                        item.name
+                    )}
+
+                </span>
+
+                <small>
+
+                    ${item.date}
+
+                </small>
+
+            `;
+
+
+            historyList.appendChild(
+                li
+            );
+
+        }
+    );
+
+}
+
+
+
+/* ==========================================
+   SCOREBOARD
+========================================== */
+
+function updateScoreboard() {
+
+
+    scoreList.innerHTML =
+        "";
+
+
+    const ranking =
+
+        Object.entries(
+            scores
+        )
+
+        .sort(
+            (a,b) =>
+                b[1] - a[1]
+        );
+
+
+    if (
+        ranking.length === 0
+    ) {
+
+
+        scoreList.innerHTML = `
+
+            <li>
+
+                Le Tirageausaur
+                n'a encore mangé personne.
+
+            </li>
+
+        `;
+
+
+        return;
+
+    }
+
+
+
+    ranking.forEach(
+        (
+            [name,score],
+            index
+        ) => {
+
+
+            const li =
+
+                document.createElement(
+                    "li"
+                );
+
+
+            let medal;
+
+
+            if (
+                index === 0
+            ) {
+
+                medal = "🥇";
+
+            }
+
+            else if (
+                index === 1
+            ) {
+
+                medal = "🥈";
+
+            }
+
+            else if (
+                index === 2
+            ) {
+
+                medal = "🥉";
+
+            }
+
+            else {
+
+                medal = "🦖";
+
             }
 
 
-            maybeTeleport(
-                distance
+            li.innerHTML = `
+
+                <span>
+
+                    ${medal}
+
+                    ${escapeHTML(
+                        name
+                    )}
+
+                </span>
+
+                <span class="score">
+
+                    ${score}
+
+                    🍖
+
+                </span>
+
+            `;
+
+
+            scoreList.appendChild(
+                li
             );
 
+        }
+    );
 
-            /* ===============================
-               MOUVEMENT ALEATOIRE PERMANENT
-            =============================== */
+}
+
+
+
+/* ==========================================
+   CONFETTIS
+========================================== */
+
+function launchConfetti() {
+
+
+    if (
+        typeof confetti
+        !==
+        "function"
+    ) {
+
+        return;
+
+    }
+
+
+    confetti({
+
+        particleCount:
+            120,
+
+        spread:
+            75,
+
+        origin: {
+
+            y:
+                .65
+
+        }
+
+    });
+
+
+
+    setTimeout(
+        () => {
+
+
+            confetti({
+
+                particleCount:
+                    80,
+
+                angle:
+                    60,
+
+                spread:
+                    55,
+
+                origin: {
+
+                    x:
+                        0
+
+                }
+
+            });
+
+
+            confetti({
+
+                particleCount:
+                    80,
+
+                angle:
+                    120,
+
+                spread:
+                    55,
+
+                origin: {
+
+                    x:
+                        1
+
+                }
+
+            });
+
+        },
+
+        200
+    );
+
+}
+
+
+
+/* ==========================================
+   RESET
+========================================== */
+
+resetButton.addEventListener(
+    "click",
+    () => {
+
+
+        history = [];
+
+        scores = {};
+
+
+        updateHistory();
+
+        updateScoreboard();
+
+
+        winnerBox.innerHTML = `
+
+            <span class="small">
+
+                Le Tirageausaur
+                cherche sa prochaine victime…
+
+            </span>
+
+            <span class="name">
+
+                🥚
+
+            </span>
+
+        `;
+
+    }
+);
+
+
+
+/* ==========================================
+   SECURITE
+========================================== */
+
+function escapeHTML(
+    text
+) {
+
+
+    const div =
+
+        document.createElement(
+            "div"
+        );
+
+
+    div.textContent =
+        text;
+
+
+    return div.innerHTML;
+
+}
+
+
+
+/* ==========================================
+   EVENEMENTS
+========================================== */
+
+participantInput
+    .addEventListener(
+        "input",
+        updateParticipantCount
+    );
+
+
+drawButton
+    .addEventListener(
+        "click",
+        drawParticipant
+    );
+
+
+updateParticipantCount();
+
+
+
+/* ==========================================
+   DINO FUYARD 🦖💨
+========================================== */
+
+
+let dinoX =
+
+    Math.random()
+
+    *
+
+    Math.max(
+        1,
+        window.innerWidth
+        -
+        100
+    );
+
+
+let dinoY =
+
+    Math.random()
+
+    *
+
+    Math.max(
+        1,
+        window.innerHeight
+        -
+        100
+    );
+
+
+
+let velocityX =
+    randomSpeed();
+
+
+let velocityY =
+    randomSpeed();
+
+
+
+let mouseX =
+    -1000;
+
+
+let mouseY =
+    -1000;
+
+
+
+const normalSpeed =
+    2.4;
+
+
+const dangerDistance =
+    190;
+
+
+const panicDistance =
+    95;
+
+
+const maxEscapeSpeed =
+    11;
+
+
+
+function randomSpeed() {
+
+
+    let speed =
+
+        Math.random()
+        *
+        2
+        +
+        1;
+
+
+    if (
+        Math.random()
+        >
+        .5
+    ) {
+
+        speed *=
+            -1;
+
+    }
+
+
+    return speed;
+
+}
+
+
+
+/* ==========================================
+   SOURIS
+========================================== */
+
+document.addEventListener(
+    "mousemove",
+    event => {
+
+
+        mouseX =
+            event.clientX;
+
+
+        mouseY =
+            event.clientY;
+
+    }
+);
+
+
+
+/* ==========================================
+   MOUVEMENT ERRATIQUE
+========================================== */
+
+setInterval(
+    () => {
+
+
+        if (
+            Math.random()
+            <
+            .75
+        ) {
+
 
             velocityX +=
-                (Math.random() - 0.5)
+
+                (
+                    Math.random()
+                    -
+                    .5
+                )
+
                 *
-                0.14;
+                4;
+
 
             velocityY +=
-                (Math.random() - 0.5)
-                *
-                0.14;
 
-
-            /* ===============================
-               VITESSE MAX
-            =============================== */
-
-            let speed =
-                Math.sqrt(
-                    velocityX
-                    *
-                    velocityX
-                    +
-                    velocityY
-                    *
-                    velocityY
-                );
-
-
-            let maximumSpeed =
-                distance < dangerDistance
-                    ?
-                    maxEscapeSpeed
-                    :
-                    normalSpeed;
-
-
-            if (
-                speed > maximumSpeed
-            ) {
-
-                velocityX =
-                    (
-                        velocityX
-                        /
-                        speed
-                    )
-                    *
-                    maximumSpeed;
-
-                velocityY =
-                    (
-                        velocityY
-                        /
-                        speed
-                    )
-                    *
-                    maximumSpeed;
-
-            }
-
-
-            /* ===============================
-               DEPLACEMENT
-            =============================== */
-
-            dinoX +=
-                velocityX;
-
-            dinoY +=
-                velocityY;
-
-
-            /* ===============================
-               REBOND GAUCHE
-            =============================== */
-
-            if (
-                dinoX <= 0
-            ) {
-
-                dinoX = 0;
-
-                velocityX =
-                    Math.abs(
-                        velocityX
-                    );
-
-            }
-
-
-            /* ===============================
-               REBOND DROITE
-            =============================== */
-
-            if (
-                dinoX >=
-                window.innerWidth
-                -
-                dinoWidth
-            ) {
-
-                dinoX =
-                    window.innerWidth
+                (
+                    Math.random()
                     -
-                    dinoWidth;
-
-                velocityX =
-                    -Math.abs(
-                        velocityX
-                    );
-
-            }
-
-
-            /* ===============================
-               REBOND HAUT
-            =============================== */
-
-            if (
-                dinoY <= 0
-            ) {
-
-                dinoY = 0;
-
-                velocityY =
-                    Math.abs(
-                        velocityY
-                    );
-
-            }
-
-
-            /* ===============================
-               REBOND BAS
-            =============================== */
-
-            if (
-                dinoY >=
-                window.innerHeight
-                -
-                dinoHeight
-            ) {
-
-                dinoY =
-                    window.innerHeight
-                    -
-                    dinoHeight;
-
-                velocityY =
-                    -Math.abs(
-                        velocityY
-                    );
-
-            }
-
-
-            /* ===============================
-               ORIENTATION DU DINO
-            =============================== */
-
-            const flip =
-                velocityX < 0
-                    ?
-                    -1
-                    :
-                    1;
-
-
-            const rotation =
-                Math.max(
-                    -15,
-                    Math.min(
-                        15,
-                        velocityY * 2
-                    )
-                );
-
-
-            dino.style.transform =
-                `
-                translate(
-                    ${dinoX}px,
-                    ${dinoY}px
+                    .5
                 )
-                scaleX(${flip})
-                rotate(${rotation}deg)
-                `;
 
-
-            requestAnimationFrame(
-                moveDino
-            );
+                *
+                4;
 
         }
 
 
-        /* ==========================================
-           REDIMENSIONNEMENT
-        ========================================== */
 
-        window.addEventListener(
-            "resize",
-            () => {
+        if (
+            Math.random()
+            <
+            .18
+        ) {
 
-                dinoX =
-                    Math.min(
-                        dinoX,
-                        window.innerWidth
-                        -
-                        dino.offsetWidth
-                    );
+            velocityX *=
+                -1;
 
-                dinoY =
-                    Math.min(
-                        dinoY,
-                        window.innerHeight
-                        -
-                        dino.offsetHeight
-                    );
+        }
 
-                dinoX =
-                    Math.max(
-                        0,
-                        dinoX
-                    );
 
-                dinoY =
-                    Math.max(
-                        0,
-                        dinoY
-                    );
 
-            }
+        if (
+            Math.random()
+            <
+            .18
+        ) {
+
+            velocityY *=
+                -1;
+
+        }
+
+    },
+
+    420
+);
+
+
+
+/* ==========================================
+   TELEPORTATION
+========================================== */
+
+let lastTeleport =
+    0;
+
+
+function maybeTeleport(
+    distance
+) {
+
+
+    const now =
+        Date.now();
+
+
+    if (
+
+        distance < 50
+
+        &&
+
+        now
+        -
+        lastTeleport
+        >
+        2500
+
+        &&
+
+        Math.random()
+        <
+        .035
+
+    ) {
+
+
+        dinoX =
+
+            Math.random()
+
+            *
+
+            Math.max(
+
+                1,
+
+                window.innerWidth
+
+                -
+
+                dino.offsetWidth
+
+            );
+
+
+        dinoY =
+
+            Math.random()
+
+            *
+
+            Math.max(
+
+                1,
+
+                window.innerHeight
+
+                -
+
+                dino.offsetHeight
+
+            );
+
+
+        velocityX =
+            randomSpeed()
+            *
+            2;
+
+
+        velocityY =
+            randomSpeed()
+            *
+            2;
+
+
+        lastTeleport =
+            now;
+
+    }
+
+}
+
+
+
+/* ==========================================
+   ANIMATION DINO
+========================================== */
+
+function moveDino() {
+
+
+    const dinoWidth =
+
+        dino.offsetWidth
+        ||
+        90;
+
+
+    const dinoHeight =
+
+        dino.offsetHeight
+        ||
+        90;
+
+
+
+    const centerX =
+
+        dinoX
+        +
+        dinoWidth
+        /
+        2;
+
+
+    const centerY =
+
+        dinoY
+        +
+        dinoHeight
+        /
+        2;
+
+
+
+    const deltaX =
+
+        centerX
+        -
+        mouseX;
+
+
+    const deltaY =
+
+        centerY
+        -
+        mouseY;
+
+
+
+    const distance =
+
+        Math.sqrt(
+
+            deltaX
+            *
+            deltaX
+
+            +
+
+            deltaY
+            *
+            deltaY
+
         );
 
 
-        /* ==========================================
-           GO !
-        ========================================== */
 
-        moveDino();
+    /* FUITE */
 
-    </script>
+
+    if (
+
+        distance
+        <
+        dangerDistance
+
+        &&
+
+        distance
+        >
+        0
+
+    ) {
+
+
+        const directionX =
+
+            deltaX
+            /
+            distance;
+
+
+        const directionY =
+
+            deltaY
+            /
+            distance;
+
+
+
+        const panic =
+
+            1
+
+            -
+
+            distance
+            /
+            dangerDistance;
+
+
+
+        velocityX +=
+
+            directionX
+
+            *
+
+            panic
+
+            *
+
+            2.8;
+
+
+
+        velocityY +=
+
+            directionY
+
+            *
+
+            panic
+
+            *
+
+            2.8;
+
+
+
+        if (
+            distance
+            <
+            panicDistance
+        ) {
+
+
+            velocityX +=
+
+                directionX
+                *
+                2.4;
+
+
+            velocityY +=
+
+                directionY
+                *
+                2.4;
+
+        }
+
+    }
+
+
+
+    maybeTeleport(
+        distance
+    );
+
+
+
+    /* MOUVEMENT ALEATOIRE */
+
+
+    velocityX +=
+
+        (
+            Math.random()
+            -
+            .5
+        )
+
+        *
+        .14;
+
+
+    velocityY +=
+
+        (
+            Math.random()
+            -
+            .5
+        )
+
+        *
+        .14;
+
+
+
+    /* VITESSE */
+
+
+    let speed =
+
+        Math.sqrt(
+
+            velocityX
+            *
+            velocityX
+
+            +
+
+            velocityY
+            *
+            velocityY
+
+        );
+
+
+
+    let maximumSpeed =
+
+        distance
+        <
+        dangerDistance
+
+        ?
+
+        maxEscapeSpeed
+
+        :
+
+        normalSpeed;
+
+
+
+    if (
+        speed
+        >
+        maximumSpeed
+    ) {
+
+
+        velocityX =
+
+            (
+                velocityX
+                /
+                speed
+            )
+
+            *
+
+            maximumSpeed;
+
+
+        velocityY =
+
+            (
+                velocityY
+                /
+                speed
+            )
+
+            *
+
+            maximumSpeed;
+
+    }
+
+
+
+    /* DEPLACEMENT */
+
+
+    dinoX +=
+        velocityX;
+
+
+    dinoY +=
+        velocityY;
+
+
+
+    /* REBONDS */
+
+
+    if (
+        dinoX <= 0
+    ) {
+
+
+        dinoX =
+            0;
+
+
+        velocityX =
+
+            Math.abs(
+                velocityX
+            );
+
+    }
+
+
+
+    if (
+
+        dinoX
+
+        >=
+
+        window.innerWidth
+
+        -
+
+        dinoWidth
+
+    ) {
+
+
+        dinoX =
+
+            window.innerWidth
+
+            -
+
+            dinoWidth;
+
+
+        velocityX =
+
+            -Math.abs(
+                velocityX
+            );
+
+    }
+
+
+
+    if (
+        dinoY <= 0
+    ) {
+
+
+        dinoY =
+            0;
+
+
+        velocityY =
+
+            Math.abs(
+                velocityY
+            );
+
+    }
+
+
+
+    if (
+
+        dinoY
+
+        >=
+
+        window.innerHeight
+
+        -
+
+        dinoHeight
+
+    ) {
+
+
+        dinoY =
+
+            window.innerHeight
+
+            -
+
+            dinoHeight;
+
+
+        velocityY =
+
+            -Math.abs(
+                velocityY
+            );
+
+    }
+
+
+
+    /* ORIENTATION */
+
+
+    const flip =
+
+        velocityX < 0
+
+        ?
+
+        -1
+
+        :
+
+        1;
+
+
+
+    const rotation =
+
+        Math.max(
+
+            -15,
+
+            Math.min(
+
+                15,
+
+                velocityY
+                *
+                2
+
+            )
+
+        );
+
+
+
+    dino.style.transform =
+
+        `translate(
+            ${dinoX}px,
+            ${dinoY}px
+        )
+        scaleX(${flip})
+        rotate(${rotation}deg)`;
+
+
+
+    requestAnimationFrame(
+        moveDino
+    );
+
+}
+
+
+
+/* ==========================================
+   REDIMENSIONNEMENT
+========================================== */
+
+window.addEventListener(
+    "resize",
+    () => {
+
+
+        dinoX =
+
+            Math.min(
+
+                dinoX,
+
+                window.innerWidth
+
+                -
+
+                dino.offsetWidth
+
+            );
+
+
+        dinoY =
+
+            Math.min(
+
+                dinoY,
+
+                window.innerHeight
+
+                -
+
+                dino.offsetHeight
+
+            );
+
+
+        dinoX =
+
+            Math.max(
+                0,
+                dinoX
+            );
+
+
+        dinoY =
+
+            Math.max(
+                0,
+                dinoY
+            );
+
+    }
+);
+
+
+
+/* ==========================================
+   LANCEMENT
+========================================== */
+
+moveDino();
+
+
+</script>
+
 
 </body>
+
 </html>
