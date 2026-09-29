@@ -14,8 +14,7 @@
           type="image/x-icon"
           href="favicon.ico">
 
-
-    <!-- POLICES ENFANTINES -->
+    <!-- Polices enfantines -->
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
@@ -27,24 +26,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Chewy&display=swap"
           rel="stylesheet">
 
-
-    <!-- FONT AWESOME -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
     <style>
 
         * {
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
 
@@ -62,13 +52,11 @@
                     #d9f99d 0,
                     transparent 30%
                 ),
-
                 radial-gradient(
                     circle at bottom right,
                     #bbf7d0 0,
                     transparent 30%
                 ),
-
                 #f4f7f2;
 
             color: #1f2937;
@@ -78,37 +66,7 @@
 
 
         /* =========================
-           PETITES EMPREINTES DE FOND
-        ========================= */
-
-        body::before {
-
-            content:
-                "🐾     🌿       🦴       🐾        🌿      🦴       🐾";
-
-            position: fixed;
-
-            left: 0;
-            top: 20%;
-
-            width: 100%;
-
-            font-size: 28px;
-
-            opacity: .07;
-
-            letter-spacing: 35px;
-
-            transform: rotate(-12deg);
-
-            pointer-events: none;
-
-            z-index: -1;
-        }
-
-
-        /* =========================
-           DINO ERRATIQUE
+           DINO QUI SE BALADE
         ========================= */
 
         #movingIcon {
@@ -130,8 +88,7 @@
 
             filter:
                 drop-shadow(
-                    0 5px 5px
-                    rgba(0,0,0,.18)
+                    0 5px 5px rgba(0,0,0,.18)
                 );
         }
 
@@ -142,13 +99,11 @@
 
         .page {
 
-            width:
-                min(1000px, 94%);
+            width: min(1050px, 94%);
 
             margin: auto;
 
-            padding:
-                80px 0 60px;
+            padding: 80px 0 60px;
         }
 
 
@@ -163,7 +118,6 @@
             margin-bottom: 35px;
         }
 
-
         h1 {
 
             font-family:
@@ -171,11 +125,7 @@
                 cursive;
 
             font-size:
-                clamp(
-                    48px,
-                    8vw,
-                    82px
-                );
+                clamp(48px, 8vw, 82px);
 
             margin: 0;
 
@@ -184,20 +134,12 @@
             letter-spacing: 2px;
 
             text-shadow:
+                3px 3px 0 #bef264,
+                6px 6px 0 #84cc16,
+                9px 9px 0 rgba(0,0,0,.08);
 
-                3px 3px 0
-                #bef264,
-
-                6px 6px 0
-                #84cc16,
-
-                9px 9px 0
-                rgba(0,0,0,.08);
-
-            transform:
-                rotate(-1deg);
+            transform: rotate(-1deg);
         }
-
 
         .subtitle {
 
@@ -209,11 +151,6 @@
 
             color: #64748b;
         }
-
-
-        /* =========================
-           FRISE DINO
-        ========================= */
 
         .dino-trail {
 
@@ -230,22 +167,15 @@
                 infinite;
         }
 
-
         @keyframes trailBounce {
 
             0%,
             100% {
-
-                transform:
-                    translateY(0);
-
+                transform: translateY(0);
             }
 
             50% {
-
-                transform:
-                    translateY(-4px);
-
+                transform: translateY(-4px);
             }
 
         }
@@ -258,58 +188,101 @@
         .main-card {
 
             background:
-                rgba(
-                    255,
-                    255,
-                    255,
-                    .93
-                );
+                rgba(255,255,255,.94);
 
             border-radius: 30px;
 
             padding: 30px;
 
             box-shadow:
-
-                0 20px 50px
-                rgba(0,0,0,.08);
+                0 20px 50px rgba(0,0,0,.08);
 
             border:
-
-                3px solid
-                rgba(
-                    132,
-                    204,
-                    22,
-                    .25
-                );
-
-            backdrop-filter:
-                blur(8px);
+                3px solid rgba(132,204,22,.25);
         }
 
 
         /* =========================
-           PARTICIPANTS
+           MODES
         ========================= */
 
-        .participants-header {
+        .mode-selector {
 
-            display: flex;
+            display: grid;
 
-            justify-content:
-                space-between;
+            grid-template-columns:
+                repeat(2, 1fr);
 
-            align-items:
-                center;
+            gap: 12px;
 
-            gap: 10px;
+            margin-bottom: 28px;
+        }
 
-            margin-bottom: 12px;
+        .mode-button {
+
+            border: 2px solid #d1d5db;
+
+            border-radius: 18px;
+
+            padding: 15px;
+
+            background: #ffffff;
+
+            font-family:
+                "Baloo 2",
+                sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            color: #475569;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .mode-button:hover {
+
+            border-color: #84cc16;
+
+            transform: translateY(-1px);
+        }
+
+        .mode-button.active {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dcfce7,
+                    #ecfccb
+                );
+
+            border-color: #65a30d;
+
+            color: #166534;
         }
 
 
-        .participants-header strong {
+        /* =========================
+           BLOCS MODES
+        ========================= */
+
+        .mode-section {
+            display: none;
+        }
+
+        .mode-section.active {
+            display: block;
+        }
+
+
+        /* =========================
+           TITRES
+        ========================= */
+
+        .section-title {
 
             font-family:
                 "Chewy",
@@ -317,26 +290,18 @@
 
             color: #166534;
 
-            font-size: 23px;
+            font-size: 24px;
 
-            letter-spacing: .5px;
+            margin-bottom: 12px;
         }
 
+        .section-description {
 
-        #participantCount {
-
-            background: #dcfce7;
-
-            color: #166534;
-
-            padding:
-                7px 14px;
-
-            border-radius: 30px;
-
-            font-weight: 700;
+            color: #64748b;
 
             font-size: 15px;
+
+            margin-bottom: 16px;
         }
 
 
@@ -353,9 +318,7 @@
             resize: vertical;
 
             border:
-
-                2px solid
-                #d1d5db;
+                2px solid #d1d5db;
 
             border-radius: 20px;
 
@@ -369,28 +332,54 @@
 
             outline: none;
 
-            transition: .25s;
-
             background: #fafafa;
-        }
 
+            transition: .25s;
+        }
 
         textarea:focus {
 
-            border-color:
-                #22c55e;
+            border-color: #22c55e;
 
             background: white;
 
             box-shadow:
+                0 0 0 5px rgba(34,197,94,.12);
+        }
 
-                0 0 0 5px
-                rgba(
-                    34,
-                    197,
-                    94,
-                    .12
-                );
+
+        /* =========================
+           COMPTEUR
+        ========================= */
+
+        .list-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 10px;
+        }
+
+        .counter {
+
+            background: #dcfce7;
+
+            color: #166534;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            font-size: 14px;
+
+            white-space: nowrap;
         }
 
 
@@ -406,14 +395,8 @@
 
             gap: 15px;
 
-            margin-top: 20px;
-
-            align-items: center;
-
-            justify-content:
-                space-between;
+            margin-top: 18px;
         }
-
 
         .toggle-option {
 
@@ -432,12 +415,9 @@
             user-select: none;
         }
 
-
         .toggle-option input {
-
             display: none;
         }
-
 
         .toggle {
 
@@ -453,7 +433,6 @@
 
             transition: .25s;
         }
-
 
         .toggle::after {
 
@@ -480,30 +459,98 @@
             transition: .25s;
         }
 
-
-        .toggle-option
-        input:checked
-        +
-        .toggle {
+        .toggle-option input:checked + .toggle {
 
             background: #84cc16;
         }
 
-
-        .toggle-option
-        input:checked
-        +
-        .toggle::after {
+        .toggle-option input:checked + .toggle::after {
 
             left: 24px;
         }
 
 
         /* =========================
-           BOUTON TIRAGE
+           NOËL
         ========================= */
 
-        #drawButton {
+        .christmas-lists {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .list-box {
+
+            min-width: 0;
+        }
+
+        .list-title-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 10px;
+        }
+
+        .list-title-row label {
+
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size: 22px;
+
+            color: #166534;
+        }
+
+        .copy-list-button {
+
+            border: none;
+
+            border-radius: 12px;
+
+            padding: 8px 12px;
+
+            background: #dcfce7;
+
+            color: #166534;
+
+            font-family:
+                "Baloo 2",
+                sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .copy-list-button:hover {
+
+            background: #bef264;
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           BOUTONS PRINCIPAUX
+        ========================= */
+
+        .main-action {
 
             width: 100%;
 
@@ -528,7 +575,6 @@
             color: white;
 
             background:
-
                 linear-gradient(
                     135deg,
                     #16a34a,
@@ -536,80 +582,44 @@
                 );
 
             box-shadow:
+                0 10px 0 #3f6212,
+                0 15px 25px rgba(22,163,74,.25);
 
-                0 10px 0
-                #3f6212,
-
-                0 15px 25px
-                rgba(
-                    22,
-                    163,
-                    74,
-                    .25
-                );
-
-            transition:
-                transform .15s,
-                box-shadow .15s,
-                opacity .15s;
+            transition: .15s;
         }
 
+        .main-action:hover {
 
-        #drawButton:hover {
-
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
 
             box-shadow:
-
-                0 12px 0
-                #3f6212,
-
-                0 18px 30px
-                rgba(
-                    22,
-                    163,
-                    74,
-                    .3
-                );
+                0 12px 0 #3f6212,
+                0 18px 30px rgba(22,163,74,.3);
         }
 
+        .main-action:active {
 
-        #drawButton:active {
-
-            transform:
-                translateY(6px);
+            transform: translateY(6px);
 
             box-shadow:
-
-                0 4px 0
-                #3f6212,
-
-                0 8px 15px
-                rgba(
-                    22,
-                    163,
-                    74,
-                    .2
-                );
+                0 4px 0 #3f6212;
         }
 
+        .main-action:disabled {
 
-        #drawButton:disabled {
-
-            opacity: .65;
+            opacity: .6;
 
             cursor: wait;
         }
 
 
         /* =========================
-           RESULTAT
+           RESULTAT CLASSIQUE
         ========================= */
 
         #winner {
 
-            margin-top: 35px;
+            margin-top: 30px;
 
             min-height: 170px;
 
@@ -626,7 +636,6 @@
             border-radius: 25px;
 
             background:
-
                 linear-gradient(
                     135deg,
                     #ecfccb,
@@ -634,15 +643,12 @@
                 );
 
             border:
-
-                3px dashed
-                #84cc16;
+                3px dashed #84cc16;
 
             padding: 25px;
 
             transition: .3s;
         }
-
 
         #winner .small {
 
@@ -650,14 +656,12 @@
 
             color: #64748b;
 
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
 
             letter-spacing: 1px;
 
             font-weight: 800;
         }
-
 
         #winner .name {
 
@@ -666,41 +670,133 @@
                 cursive;
 
             font-size:
-
-                clamp(
-                    42px,
-                    7vw,
-                    70px
-                );
+                clamp(42px, 7vw, 70px);
 
             color: #166534;
 
             margin-top: 8px;
 
-            letter-spacing: 1px;
-
             text-shadow:
-
-                2px 2px 0
-                #bef264;
+                2px 2px 0 #bef264;
         }
 
 
-        #winner.draw-animation {
+        /* =========================
+           RESULTATS NOËL
+        ========================= */
 
-            transform:
-                scale(1.04)
-                rotate(-1deg);
+        #christmasResults {
 
-            box-shadow:
+            margin-top: 28px;
 
-                0 15px 40px
-                rgba(
-                    34,
-                    197,
-                    94,
-                    .18
+            display: none;
+        }
+
+        #christmasResults.visible {
+            display: block;
+        }
+
+        .christmas-result-title {
+
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size: 28px;
+
+            color: #166534;
+
+            text-align: center;
+
+            margin-bottom: 16px;
+        }
+
+        .assignment-list {
+
+            display: grid;
+
+            gap: 10px;
+        }
+
+        .assignment {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr auto 1fr;
+
+            align-items: center;
+
+            gap: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #f0fdf4,
+                    #fefce8
                 );
+
+            border:
+                2px solid #d9f99d;
+
+            border-radius: 18px;
+
+            padding: 14px 18px;
+        }
+
+        .giver {
+
+            font-weight: 800;
+
+            text-align: right;
+
+            color: #166534;
+        }
+
+        .receiver {
+
+            font-weight: 800;
+
+            text-align: left;
+
+            color: #9a3412;
+        }
+
+        .arrow {
+
+            font-size: 24px;
+        }
+
+
+        /* =========================
+           MESSAGE ERREUR
+        ========================= */
+
+        .message {
+
+            margin-top: 18px;
+
+            padding: 13px 16px;
+
+            border-radius: 14px;
+
+            display: none;
+
+            font-weight: 700;
+        }
+
+        .message.visible {
+            display: block;
+        }
+
+        .message.error {
+
+            background: #fee2e2;
+
+            color: #991b1b;
+
+            border:
+                1px solid #fecaca;
         }
 
 
@@ -713,13 +809,12 @@
             display: grid;
 
             grid-template-columns:
-                repeat(2,1fr);
+                repeat(2, 1fr);
 
             gap: 22px;
 
             margin-top: 25px;
         }
-
 
         .panel {
 
@@ -730,16 +825,11 @@
             padding: 22px;
 
             border:
-
-                2px solid
-                #dcfce7;
+                2px solid #dcfce7;
 
             box-shadow:
-
-                0 8px 25px
-                rgba(0,0,0,.06);
+                0 8px 25px rgba(0,0,0,.06);
         }
-
 
         .panel h2 {
 
@@ -749,14 +839,10 @@
 
             font-size: 25px;
 
-            letter-spacing: .5px;
-
-            margin:
-                0 0 18px;
+            margin: 0 0 18px;
 
             color: #166534;
         }
-
 
         ul {
 
@@ -767,35 +853,23 @@
             list-style: none;
         }
 
-
         li {
 
             display: flex;
 
-            align-items: center;
-
-            justify-content:
-                space-between;
+            justify-content: space-between;
 
             gap: 10px;
 
-            padding:
-                11px 5px;
+            padding: 11px 5px;
 
             border-bottom:
-
-                1px solid
-                #f1f5f9;
-
-            font-size: 15px;
+                1px solid #f1f5f9;
         }
-
 
         li:last-child {
-
             border-bottom: none;
         }
-
 
         .score {
 
@@ -805,8 +879,7 @@
 
             color: #365314;
 
-            padding:
-                4px 10px;
+            padding: 4px 10px;
 
             border-radius: 15px;
         }
@@ -820,7 +893,6 @@
 
             text-align: center;
         }
-
 
         #resetButton {
 
@@ -838,32 +910,11 @@
 
             font-size: 14px;
 
-            font-weight: 600;
+            font-weight: 700;
 
             cursor: pointer;
 
-            text-decoration:
-                underline;
-        }
-
-
-        /* =========================
-           CONFETTIS
-        ========================= */
-
-        #fireworksCanvas {
-
-            position: fixed;
-
-            inset: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            pointer-events: none;
-
-            z-index: 999;
+            text-decoration: underline;
         }
 
 
@@ -871,51 +922,54 @@
            MOBILE
         ========================= */
 
-        @media
-        (max-width:700px) {
+        @media (max-width: 700px) {
 
             .page {
-
                 width: 92%;
-
-                padding-top: 80px;
             }
 
-
             .main-card {
-
                 padding: 20px;
             }
 
-
-            .dashboard {
-
-                grid-template-columns:
-                    1fr;
+            .mode-selector {
+                grid-template-columns: 1fr;
             }
 
+            .christmas-lists {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .assignment {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .giver,
+            .receiver {
+                text-align: center;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
 
             #movingIcon {
-
                 width: 65px;
             }
 
+            .list-header,
+            .list-title-row {
 
-            .participants-header {
+                align-items: flex-start;
 
-                align-items:
-                    flex-start;
-
-                flex-direction:
-                    column;
-            }
-
-
-            .dino-trail {
-
-                font-size: 17px;
-
-                letter-spacing: 2px;
+                flex-direction: column;
             }
 
         }
@@ -928,8 +982,6 @@
 <body>
 
 
-<!-- PETIT DINO QUI SE BALADE -->
-
 <img
     src="dino.png"
     alt="Le Tirageausaur"
@@ -937,13 +989,8 @@
 >
 
 
-<canvas id="fireworksCanvas"></canvas>
-
-
 <div class="page">
 
-
-    <!-- HEADER -->
 
     <header>
 
@@ -952,184 +999,316 @@
         </h1>
 
         <div class="subtitle">
-
-            🌿 Le dinosaure qui décide
-            à ta place… 🌿
-
+            🌿 Le dinosaure qui décide à ta place… 🌿
         </div>
 
         <div class="dino-trail">
-
             🦴 🌿 🐾 🌴 🥚 🌴 🐾 🌿 🦴
-
         </div>
 
     </header>
 
 
-
-    <!-- CARTE PRINCIPALE -->
-
     <div class="main-card">
 
 
-        <div class="participants-header">
+        <!-- =========================
+             CHOIX DU MODE
+        ========================== -->
 
-            <strong>
+        <div class="mode-selector">
 
-                👥 Les victimes potentielles
+            <button
+                type="button"
+                class="mode-button active"
+                data-mode="classic"
+            >
+                🦖 Tirage classique
+            </button>
 
-            </strong>
-
-            <span id="participantCount">
-
-                0 participant
-
-            </span>
-
-        </div>
-
-
-
-        <textarea
-            id="participantInput"
-            placeholder="Écris les noms des participants, un par ligne...
-
-Par exemple :
-Alice
-Mikael
-Seb
-Lilou"
-        ></textarea>
-
-
-
-        <!-- OPTION RETRAIT -->
-
-        <div class="options">
-
-            <label class="toggle-option">
-
-                <input
-                    type="checkbox"
-                    id="removeWinner"
-                >
-
-                <span class="toggle"></span>
-
-                Retirer la victime
-                après le tirage
-
-            </label>
-
-        </div>
-
-
-
-        <!-- BOUTON -->
-
-        <button id="drawButton">
-
-            🦖
-
-            Faire le Tirageausaur !
-
-        </button>
-
-
-
-        <!-- RESULTAT -->
-
-        <div id="winner">
-
-            <span class="small">
-
-                Le Tirageausaur
-                cherche sa prochaine victime…
-
-            </span>
-
-            <span class="name">
-
-                🥚
-
-            </span>
-
-        </div>
-
-
-
-        <div class="reset-wrapper">
-
-            <button id="resetButton">
-
-                🦴 Réinitialiser
-                l'historique et les scores
-
+            <button
+                type="button"
+                class="mode-button"
+                data-mode="christmas"
+            >
+                🎄 Cadeau de Noël
             </button>
 
         </div>
 
 
+
+        <!-- =========================
+             MODE CLASSIQUE
+        ========================== -->
+
+        <section
+            id="classicMode"
+            class="mode-section active"
+        >
+
+            <div class="list-header">
+
+                <div class="section-title">
+                    👥 Les victimes potentielles
+                </div>
+
+                <span
+                    id="participantCount"
+                    class="counter"
+                >
+                    0 participant
+                </span>
+
+            </div>
+
+            <textarea
+                id="participantInput"
+                placeholder="Écris les noms des participants, un par ligne...
+
+Alice
+Mikael
+Seb
+Lilou"
+            ></textarea>
+
+
+            <div class="options">
+
+                <label class="toggle-option">
+
+                    <input
+                        type="checkbox"
+                        id="removeWinner"
+                    >
+
+                    <span class="toggle"></span>
+
+                    Retirer la victime après le tirage
+
+                </label>
+
+            </div>
+
+
+            <button
+                id="drawButton"
+                class="main-action"
+            >
+                🦖 Faire le Tirageausaur !
+            </button>
+
+
+            <div id="winner">
+
+                <span class="small">
+                    Le Tirageausaur cherche sa prochaine victime…
+                </span>
+
+                <span class="name">
+                    🥚
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             MODE CADEAU DE NOËL
+        ========================== -->
+
+        <section
+            id="christmasMode"
+            class="mode-section"
+        >
+
+            <div class="section-title">
+                🎄 Cadeau de Noël
+            </div>
+
+            <div class="section-description">
+                Le Tirageausaur va décider qui doit s'occuper de qui.
+            </div>
+
+
+            <div class="christmas-lists">
+
+
+                <!-- LISTE 1 -->
+
+                <div class="list-box">
+
+                    <div class="list-title-row">
+
+                        <label for="giverInput">
+                            🎁 Personnes qui offrent
+                        </label>
+
+                        <span
+                            id="giverCount"
+                            class="counter"
+                        >
+                            0 personne
+                        </span>
+
+                    </div>
+
+                    <textarea
+                        id="giverInput"
+                        placeholder="Alice
+Mikael
+Seb
+Lilou"
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- LISTE 2 -->
+
+                <div class="list-box">
+
+                    <div class="list-title-row">
+
+                        <label for="receiverInput">
+                            🎅 Personnes qui reçoivent
+                        </label>
+
+                        <button
+                            type="button"
+                            id="copyListButton"
+                            class="copy-list-button"
+                        >
+                            📋 Recopier la liste 1
+                        </button>
+
+                    </div>
+
+                    <textarea
+                        id="receiverInput"
+                        placeholder="Tu peux saisir une autre liste...
+ou recopier automatiquement la liste 1."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="options">
+
+                <label class="toggle-option">
+
+                    <input
+                        type="checkbox"
+                        id="preventSelf"
+                        checked
+                    >
+
+                    <span class="toggle"></span>
+
+                    Interdire de se tirer soi-même
+
+                </label>
+
+            </div>
+
+
+            <button
+                id="christmasDrawButton"
+                class="main-action"
+            >
+                🎄 Faire le Tirageausaur de Noël !
+            </button>
+
+
+            <div
+                id="christmasMessage"
+                class="message error"
+            ></div>
+
+
+            <div id="christmasResults">
+
+                <div class="christmas-result-title">
+                    🎁 Le Tirageausaur a décidé !
+                </div>
+
+                <div
+                    id="assignmentList"
+                    class="assignment-list"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RESET -->
+
+        <div class="reset-wrapper">
+
+            <button id="resetButton">
+                🦴 Réinitialiser l'historique et les scores
+            </button>
+
+        </div>
+
     </div>
 
 
 
-    <!-- TABLEAUX -->
+    <!-- =========================
+         HISTORIQUE CLASSIQUE
+    ========================== -->
 
-    <div class="dashboard">
-
+    <div
+        id="dashboard"
+        class="dashboard"
+    >
 
         <div class="panel">
 
             <h2>
-
                 🐾 Historique des victimes
-
             </h2>
 
             <ul id="historyList">
 
                 <li>
-
-                    Aucune victime
-                    pour le moment…
-
+                    Aucune victime pour le moment…
                 </li>
 
             </ul>
 
         </div>
-
 
 
         <div class="panel">
 
             <h2>
-
                 🏆 Tableau des survivants
-
             </h2>
 
             <ul id="scoreList">
 
                 <li>
-
-                    Le Tirageausaur
-                    n'a encore mangé personne.
-
+                    Le Tirageausaur n'a encore mangé personne.
                 </li>
 
             </ul>
 
         </div>
 
-
     </div>
 
 
 </div>
-
 
 
 <!-- CONFETTIS -->
@@ -1139,7 +1318,6 @@ src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.mi
 </script>
 
 
-
 <script>
 
 
@@ -1147,19 +1325,30 @@ src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.mi
    ELEMENTS
 ========================================== */
 
+const modeButtons =
+    document.querySelectorAll(
+        ".mode-button"
+    );
+
+const classicMode =
+    document.getElementById(
+        "classicMode"
+    );
+
+const christmasMode =
+    document.getElementById(
+        "christmasMode"
+    );
+
+const dashboard =
+    document.getElementById(
+        "dashboard"
+    );
+
+
 const participantInput =
     document.getElementById(
         "participantInput"
-    );
-
-const drawButton =
-    document.getElementById(
-        "drawButton"
-    );
-
-const winnerBox =
-    document.getElementById(
-        "winner"
     );
 
 const participantCount =
@@ -1167,10 +1356,67 @@ const participantCount =
         "participantCount"
     );
 
+const drawButton =
+    document.getElementById(
+        "drawButton"
+    );
+
 const removeWinner =
     document.getElementById(
         "removeWinner"
     );
+
+const winnerBox =
+    document.getElementById(
+        "winner"
+    );
+
+
+const giverInput =
+    document.getElementById(
+        "giverInput"
+    );
+
+const receiverInput =
+    document.getElementById(
+        "receiverInput"
+    );
+
+const giverCount =
+    document.getElementById(
+        "giverCount"
+    );
+
+const copyListButton =
+    document.getElementById(
+        "copyListButton"
+    );
+
+const preventSelf =
+    document.getElementById(
+        "preventSelf"
+    );
+
+const christmasDrawButton =
+    document.getElementById(
+        "christmasDrawButton"
+    );
+
+const christmasResults =
+    document.getElementById(
+        "christmasResults"
+    );
+
+const assignmentList =
+    document.getElementById(
+        "assignmentList"
+    );
+
+const christmasMessage =
+    document.getElementById(
+        "christmasMessage"
+    );
+
 
 const historyList =
     document.getElementById(
@@ -1205,18 +1451,87 @@ let scores = {};
 
 
 /* ==========================================
-   PARTICIPANTS
+   CHANGEMENT DE MODE
 ========================================== */
 
-function getParticipants() {
+modeButtons.forEach(
+    button => {
 
-    return participantInput
-        .value
+        button.addEventListener(
+            "click",
+            () => {
+
+                modeButtons.forEach(
+                    item =>
+                        item.classList.remove(
+                            "active"
+                        )
+                );
+
+                button.classList.add(
+                    "active"
+                );
+
+                const mode =
+                    button.dataset.mode;
+
+                if (
+                    mode === "classic"
+                ) {
+
+                    classicMode.classList.add(
+                        "active"
+                    );
+
+                    christmasMode.classList.remove(
+                        "active"
+                    );
+
+                    dashboard.style.display =
+                        "grid";
+
+                }
+
+                else {
+
+                    classicMode.classList.remove(
+                        "active"
+                    );
+
+                    christmasMode.classList.add(
+                        "active"
+                    );
+
+                    dashboard.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+
+/* ==========================================
+   UTILITAIRE LISTE
+========================================== */
+
+function getNames(
+    textarea
+) {
+
+    return textarea.value
+
         .split("\n")
+
         .map(
             name =>
                 name.trim()
         )
+
         .filter(
             name =>
                 name !== ""
@@ -1226,14 +1541,19 @@ function getParticipants() {
 
 
 
+/* ==========================================
+   MODE CLASSIQUE
+========================================== */
+
 function updateParticipantCount() {
 
     const participants =
-        getParticipants();
+        getNames(
+            participantInput
+        );
 
     const number =
         participants.length;
-
 
     participantCount.textContent =
 
@@ -1251,14 +1571,26 @@ function updateParticipantCount() {
 
 
 
-/* ==========================================
-   TIRAGE
-========================================== */
+participantInput.addEventListener(
+    "input",
+    updateParticipantCount
+);
 
-function drawParticipant() {
 
-    let participants =
-        getParticipants();
+
+drawButton.addEventListener(
+    "click",
+    drawClassic
+);
+
+
+
+function drawClassic() {
+
+    const participants =
+        getNames(
+            participantInput
+        );
 
 
     if (
@@ -1268,22 +1600,16 @@ function drawParticipant() {
         winnerBox.innerHTML = `
 
             <span class="small">
-
-                Le Tirageausaur
-                a faim…
-
+                Le Tirageausaur a faim…
             </span>
 
             <span class="name">
-
                 Aucun nom ! 🦖
-
             </span>
 
         `;
 
         return;
-
     }
 
 
@@ -1291,14 +1617,13 @@ function drawParticipant() {
         true;
 
 
-    let animationCount =
+    let count =
         0;
 
 
     const animation =
         setInterval(
             () => {
-
 
                 const temporaryName =
 
@@ -1315,8 +1640,7 @@ function drawParticipant() {
 
                     <span class="small">
 
-                        🦖 Le Tirageausaur
-                        renifle ses victimes…
+                        🦖 Le Tirageausaur renifle ses victimes…
 
                     </span>
 
@@ -1331,19 +1655,18 @@ function drawParticipant() {
                 `;
 
 
-                animationCount++;
+                count++;
 
 
                 if (
-                    animationCount >= 14
+                    count >= 14
                 ) {
 
                     clearInterval(
                         animation
                     );
 
-
-                    chooseFinalParticipant(
+                    chooseClassicWinner(
                         participants
                     );
 
@@ -1358,16 +1681,11 @@ function drawParticipant() {
 
 
 
-/* ==========================================
-   RESULTAT
-========================================== */
-
-function chooseFinalParticipant(
+function chooseClassicWinner(
     participants
 ) {
 
-
-    const winnerIndex =
+    const index =
 
         Math.floor(
             Math.random()
@@ -1377,9 +1695,7 @@ function chooseFinalParticipant(
 
 
     const winner =
-        participants[
-            winnerIndex
-        ];
+        participants[index];
 
 
     winnerBox.innerHTML = `
@@ -1406,37 +1722,12 @@ function chooseFinalParticipant(
         ">
 
             Tu as été dévoré
-            par le Tirageausaur !
-
-            🍖
+            par le Tirageausaur ! 🍖
 
         </div>
 
     `;
 
-
-    winnerBox.classList.add(
-        "draw-animation"
-    );
-
-
-    setTimeout(
-        () => {
-
-            winnerBox
-                .classList
-                .remove(
-                    "draw-animation"
-                );
-
-        },
-
-        500
-    );
-
-
-
-    /* HISTORIQUE */
 
     history.unshift({
 
@@ -1445,24 +1736,19 @@ function chooseFinalParticipant(
 
         date:
             new Date()
-                .toLocaleTimeString(
-                    "fr-FR",
-                    {
+            .toLocaleTimeString(
+                "fr-FR",
+                {
+                    hour:
+                        "2-digit",
 
-                        hour:
-                            "2-digit",
-
-                        minute:
-                            "2-digit"
-
-                    }
-                )
+                    minute:
+                        "2-digit"
+                }
+            )
 
     });
 
-
-
-    /* SCORE */
 
     if (
         !scores[winner]
@@ -1473,32 +1759,24 @@ function chooseFinalParticipant(
 
     }
 
-
     scores[winner]++;
 
-
-
-    /* RETIRER LE NOM */
 
     if (
         removeWinner.checked
     ) {
 
-
         participants.splice(
-            winnerIndex,
+            index,
             1
         );
 
-
         participantInput.value =
-
             participants.join(
                 "\n"
             );
 
     }
-
 
 
     updateParticipantCount();
@@ -1518,11 +1796,442 @@ function chooseFinalParticipant(
 
 
 /* ==========================================
+   MODE NOËL
+========================================== */
+
+function updateChristmasCounts() {
+
+    const givers =
+        getNames(
+            giverInput
+        );
+
+    giverCount.textContent =
+
+        givers.length +
+
+        (
+            givers.length > 1
+            ?
+            " personnes"
+            :
+            " personne"
+        );
+
+}
+
+
+
+giverInput.addEventListener(
+    "input",
+    updateChristmasCounts
+);
+
+
+
+copyListButton.addEventListener(
+    "click",
+    () => {
+
+        receiverInput.value =
+            giverInput.value;
+
+        preventSelf.checked =
+            true;
+
+        hideChristmasError();
+
+    }
+);
+
+
+
+christmasDrawButton.addEventListener(
+    "click",
+    drawChristmas
+);
+
+
+
+function drawChristmas() {
+
+    hideChristmasError();
+
+    christmasResults.classList.remove(
+        "visible"
+    );
+
+
+    const givers =
+        getNames(
+            giverInput
+        );
+
+
+    const receivers =
+        getNames(
+            receiverInput
+        );
+
+
+    if (
+        givers.length === 0
+        ||
+        receivers.length === 0
+    ) {
+
+        showChristmasError(
+            "Il faut remplir les deux listes."
+        );
+
+        return;
+    }
+
+
+    if (
+        givers.length !==
+        receivers.length
+    ) {
+
+        showChristmasError(
+            "Les deux listes doivent contenir le même nombre de personnes."
+        );
+
+        return;
+    }
+
+
+    if (
+        hasDuplicates(
+            givers
+        )
+        ||
+        hasDuplicates(
+            receivers
+        )
+    ) {
+
+        showChristmasError(
+            "Chaque nom doit apparaître une seule fois dans chaque liste."
+        );
+
+        return;
+    }
+
+
+    const assignments =
+        createChristmasAssignments(
+            givers,
+            receivers,
+            preventSelf.checked
+        );
+
+
+    if (
+        !assignments
+    ) {
+
+        showChristmasError(
+            "Impossible de créer un tirage valable avec ces règles. Vérifie les listes ou désactive l'interdiction de se tirer soi-même."
+        );
+
+        return;
+    }
+
+
+    displayChristmasAssignments(
+        assignments
+    );
+
+
+    launchChristmasConfetti();
+
+}
+
+
+
+/* ==========================================
+   ALGORITHME NOËL
+========================================== */
+
+function createChristmasAssignments(
+    givers,
+    receivers,
+    preventSamePerson
+) {
+
+    const normalizedGivers =
+        givers.map(
+            normalizeName
+        );
+
+    let attempts =
+        0;
+
+
+    while (
+        attempts < 5000
+    ) {
+
+        const shuffled =
+            shuffleArray(
+                [...receivers]
+            );
+
+
+        let valid =
+            true;
+
+
+        if (
+            preventSamePerson
+        ) {
+
+            for (
+                let i = 0;
+                i < givers.length;
+                i++
+            ) {
+
+                if (
+                    normalizedGivers[i]
+                    ===
+                    normalizeName(
+                        shuffled[i]
+                    )
+                ) {
+
+                    valid =
+                        false;
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+
+        if (
+            valid
+        ) {
+
+            return givers.map(
+                (giver, index) => {
+
+                    return {
+
+                        giver:
+                            giver,
+
+                        receiver:
+                            shuffled[index]
+
+                    };
+
+                }
+            );
+
+        }
+
+
+        attempts++;
+
+    }
+
+
+    return null;
+
+}
+
+
+
+/* ==========================================
+   MELANGE TABLEAU
+========================================== */
+
+function shuffleArray(
+    array
+) {
+
+    for (
+        let i =
+            array.length - 1;
+
+        i > 0;
+
+        i--
+    ) {
+
+        const j =
+            Math.floor(
+                Math.random()
+                *
+                (
+                    i + 1
+                )
+            );
+
+
+        [
+            array[i],
+            array[j]
+        ]
+        =
+        [
+            array[j],
+            array[i]
+        ];
+
+    }
+
+
+    return array;
+
+}
+
+
+
+/* ==========================================
+   AFFICHAGE NOËL
+========================================== */
+
+function displayChristmasAssignments(
+    assignments
+) {
+
+    assignmentList.innerHTML =
+        "";
+
+
+    assignments.forEach(
+        item => {
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+            row.className =
+                "assignment";
+
+
+            row.innerHTML = `
+
+                <div class="giver">
+
+                    🎁
+                    ${escapeHTML(
+                        item.giver
+                    )}
+
+                </div>
+
+                <div class="arrow">
+
+                    ➜
+
+                </div>
+
+                <div class="receiver">
+
+                    ${escapeHTML(
+                        item.receiver
+                    )}
+                    🎄
+
+                </div>
+
+            `;
+
+
+            assignmentList.appendChild(
+                row
+            );
+
+        }
+    );
+
+
+    christmasResults.classList.add(
+        "visible"
+    );
+
+}
+
+
+
+/* ==========================================
+   ERREURS NOËL
+========================================== */
+
+function showChristmasError(
+    message
+) {
+
+    christmasMessage.textContent =
+        message;
+
+    christmasMessage.classList.add(
+        "visible"
+    );
+
+}
+
+
+
+function hideChristmasError() {
+
+    christmasMessage.classList.remove(
+        "visible"
+    );
+
+}
+
+
+
+/* ==========================================
+   DOUBLONS
+========================================== */
+
+function hasDuplicates(
+    list
+) {
+
+    const normalized =
+        list.map(
+            normalizeName
+        );
+
+
+    return new Set(
+        normalized
+    ).size
+    !==
+    normalized.length;
+
+}
+
+
+
+function normalizeName(
+    name
+) {
+
+    return name
+        .trim()
+        .toLowerCase();
+
+}
+
+
+
+/* ==========================================
    HISTORIQUE
 ========================================== */
 
 function updateHistory() {
-
 
     historyList.innerHTML =
         "";
@@ -1532,28 +2241,20 @@ function updateHistory() {
         history.length === 0
     ) {
 
-
         historyList.innerHTML = `
 
             <li>
-
-                Aucune victime
-                pour le moment…
-
+                Aucune victime pour le moment…
             </li>
 
         `;
 
-
         return;
-
     }
-
 
 
     history.forEach(
         item => {
-
 
             const li =
                 document.createElement(
@@ -1598,7 +2299,6 @@ function updateHistory() {
 
 function updateScoreboard() {
 
-
     scoreList.innerHTML =
         "";
 
@@ -1619,23 +2319,16 @@ function updateScoreboard() {
         ranking.length === 0
     ) {
 
-
         scoreList.innerHTML = `
 
             <li>
-
-                Le Tirageausaur
-                n'a encore mangé personne.
-
+                Le Tirageausaur n'a encore mangé personne.
             </li>
 
         `;
 
-
         return;
-
     }
-
 
 
     ranking.forEach(
@@ -1644,45 +2337,34 @@ function updateScoreboard() {
             index
         ) => {
 
-
             const li =
-
                 document.createElement(
                     "li"
                 );
 
-
-            let medal;
+            let medal =
+                "🦖";
 
 
             if (
                 index === 0
             ) {
-
-                medal = "🥇";
-
+                medal =
+                    "🥇";
             }
 
             else if (
                 index === 1
             ) {
-
-                medal = "🥈";
-
+                medal =
+                    "🥈";
             }
 
             else if (
                 index === 2
             ) {
-
-                medal = "🥉";
-
-            }
-
-            else {
-
-                medal = "🦖";
-
+                medal =
+                    "🥉";
             }
 
 
@@ -1700,9 +2382,7 @@ function updateScoreboard() {
 
                 <span class="score">
 
-                    ${score}
-
-                    🍖
+                    ${score} 🍖
 
                 </span>
 
@@ -1726,15 +2406,12 @@ function updateScoreboard() {
 
 function launchConfetti() {
 
-
     if (
         typeof confetti
         !==
         "function"
     ) {
-
         return;
-
     }
 
 
@@ -1747,19 +2424,45 @@ function launchConfetti() {
             75,
 
         origin: {
-
             y:
                 .65
+        }
 
+    });
+
+}
+
+
+
+function launchChristmasConfetti() {
+
+    if (
+        typeof confetti
+        !==
+        "function"
+    ) {
+        return;
+    }
+
+
+    confetti({
+
+        particleCount:
+            180,
+
+        spread:
+            100,
+
+        origin: {
+            y:
+                .55
         }
 
     });
 
 
-
     setTimeout(
         () => {
-
 
             confetti({
 
@@ -1770,13 +2473,11 @@ function launchConfetti() {
                     60,
 
                 spread:
-                    55,
+                    70,
 
                 origin: {
-
                     x:
                         0
-
                 }
 
             });
@@ -1791,20 +2492,18 @@ function launchConfetti() {
                     120,
 
                 spread:
-                    55,
+                    70,
 
                 origin: {
-
                     x:
                         1
-
                 }
 
             });
 
         },
 
-        200
+        250
     );
 
 }
@@ -1819,10 +2518,11 @@ resetButton.addEventListener(
     "click",
     () => {
 
+        history =
+            [];
 
-        history = [];
-
-        scores = {};
+        scores =
+            {};
 
 
         updateHistory();
@@ -1834,8 +2534,7 @@ resetButton.addEventListener(
 
             <span class="small">
 
-                Le Tirageausaur
-                cherche sa prochaine victime…
+                Le Tirageausaur cherche sa prochaine victime…
 
             </span>
 
@@ -1847,30 +2546,36 @@ resetButton.addEventListener(
 
         `;
 
+
+        christmasResults
+            .classList
+            .remove(
+                "visible"
+            );
+
+
+        hideChristmasError();
+
     }
 );
 
 
 
 /* ==========================================
-   SECURITE
+   SECURITE HTML
 ========================================== */
 
 function escapeHTML(
     text
 ) {
 
-
     const div =
-
         document.createElement(
             "div"
         );
 
-
     div.textContent =
         text;
-
 
     return div.innerHTML;
 
@@ -1879,31 +2584,18 @@ function escapeHTML(
 
 
 /* ==========================================
-   EVENEMENTS
+   INITIALISATION
 ========================================== */
 
-participantInput
-    .addEventListener(
-        "input",
-        updateParticipantCount
-    );
-
-
-drawButton
-    .addEventListener(
-        "click",
-        drawParticipant
-    );
-
-
 updateParticipantCount();
+
+updateChristmasCounts();
 
 
 
 /* ==========================================
-   DINO FUYARD 🦖💨
+   DINO ERRATIQUE 🦖💨
 ========================================== */
-
 
 let dinoX =
 
@@ -1933,7 +2625,6 @@ let dinoY =
     );
 
 
-
 let velocityX =
     randomSpeed();
 
@@ -1942,14 +2633,12 @@ let velocityY =
     randomSpeed();
 
 
-
 let mouseX =
     -1000;
 
 
 let mouseY =
     -1000;
-
 
 
 const normalSpeed =
@@ -1968,9 +2657,7 @@ const maxEscapeSpeed =
     11;
 
 
-
 function randomSpeed() {
-
 
     let speed =
 
@@ -1999,18 +2686,14 @@ function randomSpeed() {
 
 
 
-/* ==========================================
-   SOURIS
-========================================== */
+/* SOURIS */
 
 document.addEventListener(
     "mousemove",
     event => {
 
-
         mouseX =
             event.clientX;
-
 
         mouseY =
             event.clientY;
@@ -2020,20 +2703,16 @@ document.addEventListener(
 
 
 
-/* ==========================================
-   MOUVEMENT ERRATIQUE
-========================================== */
+/* MOUVEMENT ALEATOIRE */
 
 setInterval(
     () => {
-
 
         if (
             Math.random()
             <
             .75
         ) {
-
 
             velocityX +=
 
@@ -2042,7 +2721,6 @@ setInterval(
                     -
                     .5
                 )
-
                 *
                 4;
 
@@ -2054,12 +2732,10 @@ setInterval(
                     -
                     .5
                 )
-
                 *
                 4;
 
         }
-
 
 
         if (
@@ -2072,7 +2748,6 @@ setInterval(
                 -1;
 
         }
-
 
 
         if (
@@ -2093,9 +2768,7 @@ setInterval(
 
 
 
-/* ==========================================
-   TELEPORTATION
-========================================== */
+/* TELEPORTATION */
 
 let lastTeleport =
     0;
@@ -2104,7 +2777,6 @@ let lastTeleport =
 function maybeTeleport(
     distance
 ) {
-
 
     const now =
         Date.now();
@@ -2129,7 +2801,6 @@ function maybeTeleport(
         .035
 
     ) {
-
 
         dinoX =
 
@@ -2190,60 +2861,44 @@ function maybeTeleport(
 
 
 
-/* ==========================================
-   ANIMATION DINO
-========================================== */
+/* ANIMATION */
 
 function moveDino() {
 
-
     const dinoWidth =
-
         dino.offsetWidth
         ||
         90;
 
 
     const dinoHeight =
-
         dino.offsetHeight
         ||
         90;
 
 
-
     const centerX =
-
         dinoX
         +
-        dinoWidth
-        /
-        2;
+        dinoWidth / 2;
 
 
     const centerY =
-
         dinoY
         +
-        dinoHeight
-        /
-        2;
-
+        dinoHeight / 2;
 
 
     const deltaX =
-
         centerX
         -
         mouseX;
 
 
     const deltaY =
-
         centerY
         -
         mouseY;
-
 
 
     const distance =
@@ -2263,10 +2918,6 @@ function moveDino() {
         );
 
 
-
-    /* FUITE */
-
-
     if (
 
         distance
@@ -2281,20 +2932,16 @@ function moveDino() {
 
     ) {
 
-
         const directionX =
-
             deltaX
             /
             distance;
 
 
         const directionY =
-
             deltaY
             /
             distance;
-
 
 
         const panic =
@@ -2306,7 +2953,6 @@ function moveDino() {
             distance
             /
             dangerDistance;
-
 
 
         velocityX +=
@@ -2322,7 +2968,6 @@ function moveDino() {
             2.8;
 
 
-
         velocityY +=
 
             directionY
@@ -2336,23 +2981,19 @@ function moveDino() {
             2.8;
 
 
-
         if (
             distance
             <
             panicDistance
         ) {
 
-
             velocityX +=
-
                 directionX
                 *
                 2.4;
 
 
             velocityY +=
-
                 directionY
                 *
                 2.4;
@@ -2362,14 +3003,9 @@ function moveDino() {
     }
 
 
-
     maybeTeleport(
         distance
     );
-
-
-
-    /* MOUVEMENT ALEATOIRE */
 
 
     velocityX +=
@@ -2379,7 +3015,6 @@ function moveDino() {
             -
             .5
         )
-
         *
         .14;
 
@@ -2391,13 +3026,8 @@ function moveDino() {
             -
             .5
         )
-
         *
         .14;
-
-
-
-    /* VITESSE */
 
 
     let speed =
@@ -2417,7 +3047,6 @@ function moveDino() {
         );
 
 
-
     let maximumSpeed =
 
         distance
@@ -2433,13 +3062,11 @@ function moveDino() {
         normalSpeed;
 
 
-
     if (
         speed
         >
         maximumSpeed
     ) {
-
 
         velocityX =
 
@@ -2469,10 +3096,6 @@ function moveDino() {
     }
 
 
-
-    /* DEPLACEMENT */
-
-
     dinoX +=
         velocityX;
 
@@ -2481,27 +3104,19 @@ function moveDino() {
         velocityY;
 
 
-
-    /* REBONDS */
-
-
     if (
         dinoX <= 0
     ) {
 
-
         dinoX =
             0;
 
-
         velocityX =
-
             Math.abs(
                 velocityX
             );
 
     }
-
 
 
     if (
@@ -2517,7 +3132,6 @@ function moveDino() {
         dinoWidth
 
     ) {
-
 
         dinoX =
 
@@ -2537,24 +3151,19 @@ function moveDino() {
     }
 
 
-
     if (
         dinoY <= 0
     ) {
 
-
         dinoY =
             0;
 
-
         velocityY =
-
             Math.abs(
                 velocityY
             );
 
     }
-
 
 
     if (
@@ -2570,7 +3179,6 @@ function moveDino() {
         dinoHeight
 
     ) {
-
 
         dinoY =
 
@@ -2590,13 +3198,11 @@ function moveDino() {
     }
 
 
-
-    /* ORIENTATION */
-
-
     const flip =
 
-        velocityX < 0
+        velocityX
+        <
+        0
 
         ?
 
@@ -2605,7 +3211,6 @@ function moveDino() {
         :
 
         1;
-
 
 
     const rotation =
@@ -2627,7 +3232,6 @@ function moveDino() {
         );
 
 
-
     dino.style.transform =
 
         `translate(
@@ -2638,7 +3242,6 @@ function moveDino() {
         rotate(${rotation}deg)`;
 
 
-
     requestAnimationFrame(
         moveDino
     );
@@ -2647,50 +3250,20 @@ function moveDino() {
 
 
 
-/* ==========================================
-   REDIMENSIONNEMENT
-========================================== */
-
 window.addEventListener(
     "resize",
     () => {
 
-
-        dinoX =
-
-            Math.min(
-
-                dinoX,
-
-                window.innerWidth
-
-                -
-
-                dino.offsetWidth
-
-            );
-
-
-        dinoY =
-
-            Math.min(
-
-                dinoY,
-
-                window.innerHeight
-
-                -
-
-                dino.offsetHeight
-
-            );
-
-
         dinoX =
 
             Math.max(
                 0,
-                dinoX
+                Math.min(
+                    dinoX,
+                    window.innerWidth
+                    -
+                    dino.offsetWidth
+                )
             );
 
 
@@ -2698,17 +3271,17 @@ window.addEventListener(
 
             Math.max(
                 0,
-                dinoY
+                Math.min(
+                    dinoY,
+                    window.innerHeight
+                    -
+                    dino.offsetHeight
+                )
             );
 
     }
 );
 
-
-
-/* ==========================================
-   LANCEMENT
-========================================== */
 
 moveDino();
 
