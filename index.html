@@ -37,9 +37,7 @@
         }
 
         body {
-
             margin: 0;
-
             min-height: 100vh;
 
             font-family:
@@ -70,7 +68,6 @@
         ========================= */
 
         #movingIcon {
-
             position: fixed;
 
             width: 90px;
@@ -98,7 +95,6 @@
         ========================= */
 
         .page {
-
             width: min(1050px, 94%);
 
             margin: auto;
@@ -112,14 +108,12 @@
         ========================= */
 
         header {
-
             text-align: center;
 
             margin-bottom: 35px;
         }
 
         h1 {
-
             font-family:
                 "Chewy",
                 cursive;
@@ -142,7 +136,6 @@
         }
 
         .subtitle {
-
             margin-top: 12px;
 
             font-size: 19px;
@@ -153,7 +146,6 @@
         }
 
         .dino-trail {
-
             margin-top: 12px;
 
             font-size: 23px;
@@ -186,7 +178,6 @@
         ========================= */
 
         .main-card {
-
             background:
                 rgba(255,255,255,.94);
 
@@ -207,7 +198,6 @@
         ========================= */
 
         .mode-selector {
-
             display: grid;
 
             grid-template-columns:
@@ -219,7 +209,6 @@
         }
 
         .mode-button {
-
             border: 2px solid #d1d5db;
 
             border-radius: 18px;
@@ -244,14 +233,12 @@
         }
 
         .mode-button:hover {
-
             border-color: #84cc16;
 
             transform: translateY(-1px);
         }
 
         .mode-button.active {
-
             background:
                 linear-gradient(
                     135deg,
@@ -283,7 +270,6 @@
         ========================= */
 
         .section-title {
-
             font-family:
                 "Chewy",
                 cursive;
@@ -296,7 +282,6 @@
         }
 
         .section-description {
-
             color: #64748b;
 
             font-size: 15px;
@@ -310,7 +295,6 @@
         ========================= */
 
         textarea {
-
             width: 100%;
 
             min-height: 220px;
@@ -338,7 +322,6 @@
         }
 
         textarea:focus {
-
             border-color: #22c55e;
 
             background: white;
@@ -353,7 +336,6 @@
         ========================= */
 
         .list-header {
-
             display: flex;
 
             justify-content: space-between;
@@ -366,7 +348,6 @@
         }
 
         .counter {
-
             background: #dcfce7;
 
             color: #166534;
@@ -388,7 +369,6 @@
         ========================= */
 
         .options {
-
             display: flex;
 
             flex-wrap: wrap;
@@ -396,10 +376,11 @@
             gap: 15px;
 
             margin-top: 18px;
+
+            align-items: center;
         }
 
         .toggle-option {
-
             display: flex;
 
             align-items: center;
@@ -420,7 +401,6 @@
         }
 
         .toggle {
-
             width: 50px;
 
             height: 28px;
@@ -435,7 +415,6 @@
         }
 
         .toggle::after {
-
             content: "🥚";
 
             position: absolute;
@@ -460,66 +439,24 @@
         }
 
         .toggle-option input:checked + .toggle {
-
             background: #84cc16;
         }
 
         .toggle-option input:checked + .toggle::after {
-
             left: 24px;
         }
 
 
         /* =========================
-           NOËL
+           PETITS BOUTONS SECONDAIRES
         ========================= */
 
-        .christmas-lists {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 20px;
-        }
-
-        .list-box {
-
-            min-width: 0;
-        }
-
-        .list-title-row {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 10px;
-
-            margin-bottom: 10px;
-        }
-
-        .list-title-row label {
-
-            font-family:
-                "Chewy",
-                cursive;
-
-            font-size: 22px;
-
-            color: #166534;
-        }
-
-        .copy-list-button {
-
+        .secondary-button {
             border: none;
 
             border-radius: 12px;
 
-            padding: 8px 12px;
+            padding: 9px 13px;
 
             background: #dcfce7;
 
@@ -538,11 +475,50 @@
             transition: .2s;
         }
 
-        .copy-list-button:hover {
-
+        .secondary-button:hover {
             background: #bef264;
 
             transform: translateY(-1px);
+        }
+
+
+        /* =========================
+           NOËL
+        ========================= */
+
+        .christmas-lists {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .list-box {
+            min-width: 0;
+        }
+
+        .list-title-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 10px;
+        }
+
+        .list-title-row label {
+            font-family:
+                "Chewy",
+                cursive;
+
+            font-size: 22px;
+
+            color: #166534;
         }
 
 
@@ -551,7 +527,6 @@
         ========================= */
 
         .main-action {
-
             width: 100%;
 
             margin-top: 28px;
@@ -589,7 +564,6 @@
         }
 
         .main-action:hover {
-
             transform: translateY(-2px);
 
             box-shadow:
@@ -598,7 +572,6 @@
         }
 
         .main-action:active {
-
             transform: translateY(6px);
 
             box-shadow:
@@ -606,7 +579,6 @@
         }
 
         .main-action:disabled {
-
             opacity: .6;
 
             cursor: wait;
@@ -618,7 +590,6 @@
         ========================= */
 
         #winner {
-
             margin-top: 30px;
 
             min-height: 170px;
@@ -651,7 +622,6 @@
         }
 
         #winner .small {
-
             font-size: 15px;
 
             color: #64748b;
@@ -664,7 +634,6 @@
         }
 
         #winner .name {
-
             font-family:
                 "Chewy",
                 cursive;
@@ -686,7 +655,6 @@
         ========================= */
 
         #christmasResults {
-
             margin-top: 28px;
 
             display: none;
@@ -697,7 +665,6 @@
         }
 
         .christmas-result-title {
-
             font-family:
                 "Chewy",
                 cursive;
@@ -712,14 +679,12 @@
         }
 
         .assignment-list {
-
             display: grid;
 
             gap: 10px;
         }
 
         .assignment {
-
             display: grid;
 
             grid-template-columns:
@@ -745,7 +710,6 @@
         }
 
         .giver {
-
             font-weight: 800;
 
             text-align: right;
@@ -754,7 +718,6 @@
         }
 
         .receiver {
-
             font-weight: 800;
 
             text-align: left;
@@ -763,7 +726,6 @@
         }
 
         .arrow {
-
             font-size: 24px;
         }
 
@@ -773,7 +735,6 @@
         ========================= */
 
         .message {
-
             margin-top: 18px;
 
             padding: 13px 16px;
@@ -790,7 +751,6 @@
         }
 
         .message.error {
-
             background: #fee2e2;
 
             color: #991b1b;
@@ -805,7 +765,6 @@
         ========================= */
 
         .dashboard {
-
             display: grid;
 
             grid-template-columns:
@@ -817,7 +776,6 @@
         }
 
         .panel {
-
             background: white;
 
             border-radius: 24px;
@@ -832,7 +790,6 @@
         }
 
         .panel h2 {
-
             font-family:
                 "Chewy",
                 cursive;
@@ -845,7 +802,6 @@
         }
 
         ul {
-
             padding: 0;
 
             margin: 0;
@@ -854,7 +810,6 @@
         }
 
         li {
-
             display: flex;
 
             justify-content: space-between;
@@ -872,7 +827,6 @@
         }
 
         .score {
-
             font-weight: 800;
 
             background: #ecfccb;
@@ -890,12 +844,10 @@
         ========================= */
 
         .reset-wrapper {
-
             text-align: center;
         }
 
         #resetButton {
-
             margin-top: 20px;
 
             border: none;
@@ -945,7 +897,6 @@
             }
 
             .assignment {
-
                 grid-template-columns: 1fr;
 
                 text-align: center;
@@ -966,7 +917,6 @@
 
             .list-header,
             .list-title-row {
-
                 align-items: flex-start;
 
                 flex-direction: column;
@@ -1088,6 +1038,14 @@ Lilou"
 
                 </label>
 
+                <button
+                    type="button"
+                    id="restoreListButton"
+                    class="secondary-button"
+                >
+                    🔄 Reprendre la liste entière
+                </button>
+
             </div>
 
 
@@ -1180,7 +1138,7 @@ Lilou"
                         <button
                             type="button"
                             id="copyListButton"
-                            class="copy-list-button"
+                            class="secondary-button"
                         >
                             📋 Recopier la liste 1
                         </button>
@@ -1366,6 +1324,11 @@ const removeWinner =
         "removeWinner"
     );
 
+const restoreListButton =
+    document.getElementById(
+        "restoreListButton"
+    );
+
 const winnerBox =
     document.getElementById(
         "winner"
@@ -1448,6 +1411,10 @@ let history = [];
 
 let scores = {};
 
+let originalClassicList = [];
+
+let internalListUpdate = false;
+
 
 
 /* ==========================================
@@ -1474,6 +1441,7 @@ modeButtons.forEach(
 
                 const mode =
                     button.dataset.mode;
+
 
                 if (
                     mode === "classic"
@@ -1555,6 +1523,7 @@ function updateParticipantCount() {
     const number =
         participants.length;
 
+
     participantCount.textContent =
 
         number +
@@ -1571,9 +1540,69 @@ function updateParticipantCount() {
 
 
 
+/*
+   Quand l'utilisateur saisit ou modifie
+   manuellement la liste, cette liste devient
+   la nouvelle liste complète de référence.
+*/
+
 participantInput.addEventListener(
     "input",
-    updateParticipantCount
+    () => {
+
+        updateParticipantCount();
+
+
+        if (
+            !internalListUpdate
+        ) {
+
+            originalClassicList =
+                getNames(
+                    participantInput
+                );
+
+        }
+
+    }
+);
+
+
+
+/*
+   Reprendre tous les noms du tour initial
+*/
+
+restoreListButton.addEventListener(
+    "click",
+    () => {
+
+        if (
+            originalClassicList.length === 0
+        ) {
+
+            return;
+
+        }
+
+
+        internalListUpdate =
+            true;
+
+
+        participantInput.value =
+            originalClassicList.join(
+                "\n"
+            );
+
+
+        internalListUpdate =
+            false;
+
+
+        updateParticipantCount();
+
+    }
 );
 
 
@@ -1610,6 +1639,21 @@ function drawClassic() {
         `;
 
         return;
+    }
+
+
+    /*
+       Si aucune liste d'origine n'a encore
+       été mémorisée, on sauvegarde celle-ci.
+    */
+
+    if (
+        originalClassicList.length === 0
+    ) {
+
+        originalClassicList =
+            [...participants];
+
     }
 
 
@@ -1759,8 +1803,15 @@ function chooseClassicWinner(
 
     }
 
+
     scores[winner]++;
 
+
+
+    /*
+       Suppression du gagnant
+       sans modifier la liste complète mémorisée
+    */
 
     if (
         removeWinner.checked
@@ -1771,10 +1822,19 @@ function chooseClassicWinner(
             1
         );
 
+
+        internalListUpdate =
+            true;
+
+
         participantInput.value =
             participants.join(
                 "\n"
             );
+
+
+        internalListUpdate =
+            false;
 
     }
 
@@ -1806,6 +1866,7 @@ function updateChristmasCounts() {
             giverInput
         );
 
+
     giverCount.textContent =
 
         givers.length +
@@ -1836,8 +1897,10 @@ copyListButton.addEventListener(
         receiverInput.value =
             giverInput.value;
 
+
         preventSelf.checked =
             true;
+
 
         hideChristmasError();
 
@@ -1857,9 +1920,12 @@ function drawChristmas() {
 
     hideChristmasError();
 
-    christmasResults.classList.remove(
-        "visible"
-    );
+
+    christmasResults
+        .classList
+        .remove(
+            "visible"
+        );
 
 
     const givers =
@@ -1964,6 +2030,7 @@ function createChristmasAssignments(
         givers.map(
             normalizeName
         );
+
 
     let attempts =
         0;
@@ -2113,6 +2180,7 @@ function displayChristmasAssignments(
                     "div"
                 );
 
+
             row.className =
                 "assignment";
 
@@ -2154,9 +2222,11 @@ function displayChristmasAssignments(
     );
 
 
-    christmasResults.classList.add(
-        "visible"
-    );
+    christmasResults
+        .classList
+        .add(
+            "visible"
+        );
 
 }
 
@@ -2173,9 +2243,12 @@ function showChristmasError(
     christmasMessage.textContent =
         message;
 
-    christmasMessage.classList.add(
-        "visible"
-    );
+
+    christmasMessage
+        .classList
+        .add(
+            "visible"
+        );
 
 }
 
@@ -2183,9 +2256,11 @@ function showChristmasError(
 
 function hideChristmasError() {
 
-    christmasMessage.classList.remove(
-        "visible"
-    );
+    christmasMessage
+        .classList
+        .remove(
+            "visible"
+        );
 
 }
 
@@ -2342,6 +2417,7 @@ function updateScoreboard() {
                     "li"
                 );
 
+
             let medal =
                 "🦖";
 
@@ -2349,22 +2425,28 @@ function updateScoreboard() {
             if (
                 index === 0
             ) {
+
                 medal =
                     "🥇";
+
             }
 
             else if (
                 index === 1
             ) {
+
                 medal =
                     "🥈";
+
             }
 
             else if (
                 index === 2
             ) {
+
                 medal =
                     "🥉";
+
             }
 
 
@@ -2411,7 +2493,9 @@ function launchConfetti() {
         !==
         "function"
     ) {
+
         return;
+
     }
 
 
@@ -2441,7 +2525,9 @@ function launchChristmasConfetti() {
         !==
         "function"
     ) {
+
         return;
+
     }
 
 
@@ -2574,8 +2660,10 @@ function escapeHTML(
             "div"
         );
 
+
     div.textContent =
         text;
+
 
     return div.innerHTML;
 
